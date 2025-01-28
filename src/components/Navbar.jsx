@@ -19,60 +19,61 @@ const Navbar = () => {
       </div>
 
       {/* Navigation Links */}
-      <div style={{ marginBottom: "7rem" }} className="flex flex-col items-center mt-4">
+      <div style={{marginTop:"-70px"}} className="flex flex-col items-start mt-8 flex-grow justify-center">
         <NavLink
           to="/about"
           className={({ isActive }) =>
-            `flex items-center p-4 mb-4 w-full justify-center rounded-lg text-lg font-semibold ${
+            `flex items-center p-4 mb-4 w-full justify-start rounded-lg text-xl font-semibold ${
               isActive
                 ? "bg-[#16A085] text-white"
                 : "hover:bg-[#1ABC9C] hover:text-white transition-all"
             }`
-          }
+          } style={{fontSize: "25px"}}
         >
           <User className="mr-3" />
-          About
+          <b style={{marginLeft:"10px"}}>About</b>
         </NavLink>
+
         <NavLink
           to="/projects"
           className={({ isActive }) =>
-            `flex items-center p-4 mb-4 w-full justify-center rounded-lg text-lg font-semibold ${
+            `flex items-center p-4 mb-4 w-full justify-start rounded-lg text-lg font-semibold ${
               isActive
                 ? "bg-[#16A085] text-white"
                 : "hover:bg-[#1ABC9C] hover:text-white transition-all"
             }`
-          }
+          } style={{fontSize: "25px"}}
         >
           <Briefcase className="mr-3" />
-          Projects
+          <b style={{marginLeft:"10px"}}>Projects</b>
         </NavLink>
 
         <NavLink
           to="/skills"
           className={({ isActive }) =>
-            `flex items-center p-4 mb-4 w-full justify-center rounded-lg text-lg font-semibold ${
+            `flex items-center p-4 mb-4 w-full justify-start rounded-lg text-lg font-semibold ${
               isActive
                 ? "bg-[#16A085] text-white"
                 : "hover:bg-[#1ABC9C] hover:text-white transition-all"
             }`
-          }
+          } style={{fontSize: "25px"}}
         >
           <Code className="mr-3" />
-          Skills
+          <b style={{marginLeft:"10px"}}>Skills</b>
         </NavLink>
 
         <NavLink
           to="/contact"
           className={({ isActive }) =>
-            `flex items-center p-4 mb-4 w-full justify-center rounded-lg text-lg font-semibold ${
+            `flex items-center p-4 mb-4 w-full justify-start rounded-lg text-lg font-semibold ${
               isActive
                 ? "bg-[#16A085] text-white"
                 : "hover:bg-[#1ABC9C] hover:text-white transition-all"
             }`
-          }
+          } style={{fontSize: "25px"}}
         >
           <Mail className="mr-3" />
-          Contact
+          <b style={{marginLeft:"10px"}}>Contact</b>
         </NavLink>
       </div>
     </nav>

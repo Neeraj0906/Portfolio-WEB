@@ -71,7 +71,7 @@ const Projects = () => {
       style={{ marginLeft: "5rem", paddingLeft:"20px" }} // Adjust margin to match the width of Sidebar
     >
       <div className="max-w-4xl mx-auto relative">
-        <b><h1 style={{fontSize:"50px",marginBottom:"1px",marginTop:"10px"}} className="text-4xl font-semibold text-[#2C3E50] mb-6">Projects</h1></b>
+        <b><h1 style={{fontSize:"50px",marginBottom:"-8px",marginTop:"10px",backgroundColor:"#F5F5F5 ",borderRadius:"20px"}} className="text-4xl font-semibold text-[#14181c] mb-6">PROJECTS</h1></b>
 
         {/* Slider Container */}
         <div className="flex items-center space-x-4 relative">
@@ -95,20 +95,21 @@ const Projects = () => {
     alt={projects[currentIndex].name}
     className="w-full h-32 object-cover rounded-lg mb-4" // Reduced image height
   />
-  <h2 style={{marginTop:"-10px"}} className="text-xl font-semibold text-[#2C3E50] mb-2">
+  <h2 style={{marginTop:"-8px"}} className="text-xl font-semibold text-[#2C3E50] mb-2">
     {projects[currentIndex].name}
   </h2>
-  <p style={{marginTop:"-30px"}} className="text-sm text-[#7f8c8d] mb-4 line-clamp-3">
+  <p style={{marginTop:"-25px"}} className="text-sm text-[#7f8c8d] mb-4 line-clamp-3">
     {projects[currentIndex].summary}
   </p>
 
   {/* Vercel and GitHub Links */}
   <div style={{marginTop:"-20px"}} className="flex flex-col mt-4 space-y-2">
     <a
+    style={{color:"white",borderRadius:"20px",marginBottom:"3px"}}
       href={projects[currentIndex].vercelLink}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center justify-center bg-[#16A085] text-white px-6 py-2 rounded-lg shadow-md hover:bg-[#1ABC9C] transition duration-300"
+      className="flex items-center justify-center bg-[#1b2120] text-white px-6 py-2 rounded-lg shadow-md hover:bg-[#1ABC9C] transition duration-300"
     >
       <img
         src="/assets/Vercel icon.png"
@@ -118,10 +119,11 @@ const Projects = () => {
       View on Vercel
     </a>
     <a
+    style={{color:"white",borderRadius:"20px"}}
       href={projects[currentIndex].githubLink}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center justify-center bg-[#2C3E50] text-white px-6 py-2 rounded-lg shadow-md hover:bg-[#34495E] transition duration-300"
+      className="flex items-center justify-center bg-[#0e672a] text-white px-6 py-2 rounded-lg shadow-md hover:bg-[#34495E] transition duration-300"
     >
       <FontAwesomeIcon
         icon={faGithub}

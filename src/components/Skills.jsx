@@ -28,9 +28,9 @@ const Skills = () => {
     <section style={{marginLeft:"87px",backgroundColor:""}} className="ml-64 p-8 bg-[#2C3E50] min-h-screen">
       <div className="max-w-4xl mx-auto">
         {/* Skills Heading */}
-        <h1 className="text-5xl font-extrabold text-[#F1C40F] mb-8 text-center underline decoration-4 underline-offset-4 text-transparent bg-clip-text bg-gradient-to-r from-[#F1C40F] to-[#F39C12]">
+        {/* <h1 className="text-5xl font-extrabold text-[#F1C40F] mb-8 text-center underline decoration-4 underline-offset-4 text-transparent bg-clip-text bg-gradient-to-r from-[#F1C40F] to-[#F39C12]">
           Skills
-        </h1>
+        </h1> */}
 
         {/* Technical Skills Section */}
         <div className="mb-12">
@@ -41,7 +41,7 @@ const Skills = () => {
             {technicalSkills.map((skill, index) => (
               <div
                 key={index}
-                className="bg-[#34495E] p-6 rounded-lg shadow-lg hover:shadow-2xl transition-all ease-in-out duration-300 transform hover:scale-105"
+                className="bg-[#0d0e0f] p-6 rounded-lg shadow-lg hover:shadow-2xl transition-all ease-in-out duration-300 transform hover:scale-105"
               >
                 <h3 className="text-2xl font-semibold text-[#F1C40F] mb-2">{skill.name}</h3>
                 <p className="text-sm text-[#BDC3C7]">{skill.description}</p>
@@ -51,15 +51,15 @@ const Skills = () => {
         </div>
 
         {/* Soft Skills Section */}
-        <div>
-          <h2 className="text-3xl font-semibold text-[#BDC3C7] mb-6 text-center">
+        <div style={{marginTop:"-10px"}}>
+          <h2  className="text-3xl font-semibold text-[#BDC3C7] mb-6 text-center">
             Soft Skills
           </h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
             {softSkills.map((skill, index) => (
               <div
                 key={index}
-                className="bg-[#5D6D7E] p-6 rounded-lg shadow-md hover:shadow-lg transition-all ease-in-out duration-300 transform hover:scale-105"
+                className="bg-[#293c94] p-6 rounded-lg shadow-md hover:shadow-lg transition-all ease-in-out duration-300 transform hover:scale-105"
               >
                 <h3 className="text-2xl font-semibold text-white mb-2">{skill.name}</h3>
                 <p className="text-sm text-[#BDC3C7]">{skill.description}</p>
