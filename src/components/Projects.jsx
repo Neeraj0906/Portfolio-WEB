@@ -10,7 +10,7 @@ const Projects = () => {
     {
       id: 1,
       name: "Flights.com",
-      image: "/src/assets/Flight.com.png",
+      image: "/assets/Flight.com.png",
       summary:
         "A full-stack flight booking website with a search engine, payment integration, and a dashboard for managing bookings.",
       details:
@@ -21,7 +21,7 @@ const Projects = () => {
     {
       id: 2,
       name: "FakeStoreApi",
-      image: "/src/assets/FakeStoreApi.png",
+      image: "/assets/FakeStoreApi.png",
       summary:
         "An e-commerce website that allows users to view products, add them to a shopping cart, and proceed to checkout.",
       details:
@@ -32,7 +32,7 @@ const Projects = () => {
     {
       id: 3,
       name: "Memory Game",
-      image: "/src/assets/Memory Game.png",
+      image: "/assets/Memory Game.png",
       summary:
         "A 4x4 memory matching game built with HTML, CSS, and JavaScript.",
       details:
@@ -43,7 +43,7 @@ const Projects = () => {
     {
       id: 4,
       name: "Landing Page",
-      image: "/src/assets/Landing Page.png",
+      image: "/assets/Landing Page.png",
       summary:
         "A landing page designed for a course website, featuring key sections like course details, testimonials, and call-to-action buttons.",
       details:
@@ -111,7 +111,7 @@ const Projects = () => {
       className="flex items-center justify-center bg-[#16A085] text-white px-6 py-2 rounded-lg shadow-md hover:bg-[#1ABC9C] transition duration-300"
     >
       <img
-        src="/src/assets/Vercel icon.png"
+        src="/assets/Vercel icon.png"
         alt="Vercel"
         className="w-[30px] h-[30px] mr-2"
       />

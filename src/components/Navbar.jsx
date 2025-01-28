@@ -9,7 +9,7 @@ const Navbar = () => {
       <div className="flex flex-col items-center mt-10 mb-10">
         {/* Profile Picture */}
         <img
-          src="/src/assets/Me5.jpg"  // Ensure the correct path for your profile image
+          src="/assets/Me5.jpg"  // Ensure the correct path for your profile image
           alt="Neeraj Subramani"
           className="w-28 h-28 rounded-full object-cover shadow-md border-4 border-[#16A085]"
         />
