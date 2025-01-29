@@ -25,7 +25,7 @@ const Skills = () => {
   ];
 
   return (
-    <section style={{marginLeft:"87px",backgroundColor:""}} className="ml-64 p-8 bg-[#2C3E50] min-h-screen">
+    <section style={{marginLeft:"110px",backgroundColor:""}} className="ml-64 p-8 bg-[#2C3E50] min-h-screen">
       <div className="max-w-4xl mx-auto">
         {/* Skills Heading */}
         {/* <h1 className="text-5xl font-extrabold text-[#F1C40F] mb-8 text-center underline decoration-4 underline-offset-4 text-transparent bg-clip-text bg-gradient-to-r from-[#F1C40F] to-[#F39C12]">

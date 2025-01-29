@@ -30,7 +30,7 @@ const Contact = () => {
   };
 
   return (
-    <section style={{marginLeft:"90px"}} className="ml-64 p-8 bg-[#ecf0f1] min-h-screen">
+    <section style={{marginLeft:"120px"}} className="ml-64 p-8 bg-[#ecf0f1] min-h-screen">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-semibold text-[#2C3E50] mb-6">Contact</h1>
 
