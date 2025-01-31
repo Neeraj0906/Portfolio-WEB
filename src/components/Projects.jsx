@@ -1,154 +1,220 @@
-import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Github, ExternalLink, Code } from 'lucide-react';
+import { Button, Badge, Typography, Box } from '@mui/material';
+import { Container } from 'react-bootstrap';
 
 const Projects = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
   const projects = [
     {
       id: 1,
       name: "Flights.com",
       image: "/assets/Flight.com.png",
-      summary:
-        "A full-stack flight booking website with a search engine, payment integration, and a dashboard for managing bookings.",
-      details:
-        "The Flights.com project is a comprehensive web application that allows users to search for flights using the Amadeus API, book flights, view booking details, and make payments using the Stripe API. The frontend is built with React and Tailwind CSS, while the backend is powered by Node.js, Express, and MongoDB. This project integrates both a flight search feature and a payment gateway.",
+      summary: "A full-stack flight booking website with search engine, payment integration, and booking management.",
+      details: "The Flights.com project is a comprehensive web application that allows users to search for flights using the Amadeus API, book flights, view booking details, and make payments using the Stripe API.",
+      techStack: [
+        "React.js",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Stripe API",
+        "Amadeus API",
+        "Tailwind CSS",
+        "JWT Auth"
+      ],
       vercelLink: "https://flight-frontend-zeta.vercel.app/",
       githubLink: "https://github.com/Neeraj0906/FLIGHT-frontend",
+      type: "Full Stack"
     },
     {
       id: 2,
-      name: "FakeStoreApi",
+      name: "FakeStoreApi E-commerce",
       image: "/assets/FakeStoreApi.png",
-      summary:
-        "An e-commerce website that allows users to view products, add them to a shopping cart, and proceed to checkout.",
-      details:
-        "The FakeStoreApi project is a React-based e-commerce site that fetches product data from a public API. Users can browse products, add them to a shopping cart, modify the cart's content, and proceed to checkout. The app is designed to be responsive, using Tailwind CSS for styling, and includes features such as product quantity adjustment and removal from the cart.",
+      summary: "Feature-rich e-commerce platform with product management, cart functionality, and checkout process.",
+      details: "A React-based e-commerce site that fetches product data from a public API. Features include product browsing, cart management, and checkout flow.",
+      techStack: [
+        "React.js",
+        "Redux",
+        "Tailwind CSS",
+        "RESTful API",
+        "Context API",
+        "React Router",
+        "Local Storage"
+      ],
       vercelLink: "https://my-react-cart-app-fxnc.vercel.app/",
       githubLink: "https://github.com/Neeraj0906/React-Assignment-Done",
+      type: "Frontend"
     },
     {
       id: 3,
       name: "Memory Game",
       image: "/assets/Memory Game.png",
-      summary:
-        "A 4x4 memory matching game built with HTML, CSS, and JavaScript.",
-      details:
-        "The Memory Game project is a simple browser game where users have to match pairs of identical emojis on a grid. It is built using HTML, CSS, and vanilla JavaScript. The game allows players to flip cards, check for matches, and track the number of attempts needed to complete the game.",
+      summary: "Interactive memory matching game with score tracking and animations.",
+      details: "A browser-based memory game where users match pairs of identical emojis on a grid. Features include card flipping animations and attempt tracking.",
+      techStack: [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "Local Storage",
+        "CSS Animations",
+        "DOM Manipulation"
+      ],
       vercelLink: "https://assignment3-card-game.vercel.app/",
       githubLink: "https://github.com/Neeraj0906/Assignment3-Card-Game",
+      type: "Frontend"
     },
     {
       id: 4,
-      name: "Landing Page",
+      name: "Course Landing Page",
       image: "/assets/Landing Page.png",
-      summary:
-        "A landing page designed for a course website, featuring key sections like course details, testimonials, and call-to-action buttons.",
-      details:
-        "The Landing Page project is a marketing page for an online course platform. It includes sections like featured courses, testimonials, and a call-to-action section encouraging users to sign up. The page is built using HTML and Tailwind CSS for a responsive, clean design.",
+      summary: "Responsive landing page for an educational platform with modern design principles.",
+      details: "A marketing page for an online course platform featuring course details, testimonials, and call-to-action sections.",
+      techStack: [
+        "HTML5",
+        "Tailwind CSS",
+        "Responsive Design",
+        "CSS Grid",
+        "CSS Flexbox"
+      ],
       vercelLink: "https://assignment-2-green-sigma.vercel.app/",
       githubLink: "https://github.com/Neeraj0906/Assignment-2",
-    },
+      type: "Frontend"
+    }
   ];
 
-  const handleNext = () => {
-    if (currentIndex < projects.length - 1) {
-      setCurrentIndex(currentIndex + 1);
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3
+      }
     }
   };
 
-  const handlePrevious = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
-    }
+  const item = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0 }
   };
 
   return (
-    <section
-      className="p-8 bg-[#ecf0f1] min-h-screen mt-12"
-      style={{ marginLeft: "5rem", paddingLeft:"20px" }} // Adjust margin to match the width of Sidebar
-    >
-      <div className="max-w-4xl mx-auto relative">
-        <b><h1 style={{fontSize:"50px",marginBottom:"-8px",marginTop:"10px",backgroundColor:"#F5F5F5 ",borderRadius:"20px"}} className="text-4xl font-semibold text-[#14181c] mb-6">PROJECTS</h1></b>
+    <section className="bg-gray-50 py-20 ml-[100px]" style={{ backgroundColor: "#273746" }}>
+      <Container>
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          className="mb-12"
+        >
+          <Typography variant="h3" gutterBottom style={{ fontWeight: 'bold', color: '#fff' }}>
+            Featured <span style={{ color: '#4c6ef5' }}>Projects</span>
+          </Typography>
+          <div className="h-1 w-20 bg-indigo-600 rounded-full"></div>
+        </motion.div>
 
-        {/* Slider Container */}
-        <div className="flex items-center space-x-4 relative">
-          {/* Previous Button */}
-          <button
-            onClick={handlePrevious}
-            disabled={currentIndex === 0}
-            className={`absolute bg-[#3498db] text-white px-6 py-3 rounded-full shadow-xl ${
-              currentIndex === 0
-                ? "opacity-50 cursor-not-allowed"
-                : "hover:bg-[#2980b9]"
-            }`}
-          >
-            <FontAwesomeIcon icon={faChevronLeft} className="text-2xl" />
-          </button>
+        <motion.div
+          variants={container}
+          initial="hidden"
+          animate="show"
+          className="row row-cols-1 row-cols-md-2 g-4"
+        >
+          {projects.map((project) => (
+            <motion.div key={project.id} variants={item} className="col">
+              <Box className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                <div className="relative group">
+                  <img
+                    src={project.image}
+                    alt={project.name}
+                    className="w-full h-48 object-cover object-top"
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <div className="flex space-x-4">
+                      <Button
+                        component="a"
+                        href={project.vercelLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        variant="contained"
+                        color="primary"
+                        className="p-2 rounded-full"
+                      >
+                        <ExternalLink />
+                      </Button>
+                      <Button
+                        component="a"
+                        href={project.githubLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        variant="contained"
+                        color="secondary"
+                        className="p-2 rounded-full"
+                      >
+                        <Github />
+                      </Button>
+                    </div>
+                  </div>
+                </div>
 
-          {/* Current Project */}
-<div   className="flex-shrink-0 w-full bg-white rounded-lg shadow-lg p-4 max-h-[400px]">
-  <img
-    src={projects[currentIndex].image}
-    alt={projects[currentIndex].name}
-    className="w-full h-32 object-cover rounded-lg mb-4" // Reduced image height
-  />
-  <h2 style={{marginTop:"-8px"}} className="text-xl font-semibold text-[#2C3E50] mb-2">
-    {projects[currentIndex].name}
-  </h2>
-  <p style={{marginTop:"-25px"}} className="text-sm text-[#7f8c8d] mb-4 line-clamp-3">
-    {projects[currentIndex].summary}
-  </p>
+                <div className="p-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <Typography variant="h5" component="h2" style={{ fontWeight: 'bold' }}>
+                      {project.name}
+                    </Typography>
+                    <Badge color="primary" badgeContent={project.type} />
+                  </div>
 
-  {/* Vercel and GitHub Links */}
-  <div style={{marginTop:"-20px"}} className="flex flex-col mt-4 space-y-2">
-    <a
-    style={{color:"white",borderRadius:"20px",marginBottom:"3px"}}
-      href={projects[currentIndex].vercelLink}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="flex items-center justify-center bg-[#1b2120] text-white px-6 py-2 rounded-lg shadow-md hover:bg-[#1ABC9C] transition duration-300"
-    >
-      <img
-        src="/assets/Vercel icon.png"
-        alt="Vercel"
-        className="w-[30px] h-[30px] mr-2"
-      />
-      View on Vercel
-    </a>
-    <a
-    style={{color:"white",borderRadius:"20px"}}
-      href={projects[currentIndex].githubLink}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="flex items-center justify-center bg-[#0e672a] text-white px-6 py-2 rounded-lg shadow-md hover:bg-[#34495E] transition duration-300"
-    >
-      <FontAwesomeIcon
-        icon={faGithub}
-        className="text-white w-[30px] h-[30px] mr-2"
-      />
-      View on GitHub
-    </a>
+                  <p className="text-gray-600 mb-4">{project.summary}</p>
+
+                  <div className="mb-4">
+  <Typography
+    variant="h6"
+    color="textPrimary"
+    style={{ fontWeight: 'bold', fontSize: '1.2rem' }}
+    gutterBottom
+  >
+    <Code className="w-4 h-4 mr-2" />
+    Tech Stack
+  </Typography>
+  <div className="flex flex-wrap gap-3">
+    {project.techStack.map((tech, index) => (
+      <span
+        key={index}
+        className="text-gray-800 text-lg font-medium border border-gray-300 px-3 py-1 rounded-md"
+      >
+        {tech}
+      </span>
+    ))}
   </div>
 </div>
 
 
-          {/* Next Button */}
-          <button
-            onClick={handleNext}
-            disabled={currentIndex === projects.length - 1}
-            className={`absolute right-[-0rem] bg-[#3498db] text-white px-6 py-3 ml-10 rounded-full shadow-xl ${
-              currentIndex === projects.length - 1
-                ? "opacity-50 cursor-not-allowed"
-                : "hover:bg-[#2980b9]"
-            }`}
-          >
-            <FontAwesomeIcon icon={faChevronRight} className="text-2xl" />
-          </button>
-        </div>
-      </div>
+                  <div className="d-flex justify-content-between">
+                    <Button
+                      component="a"
+                      href={project.vercelLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      variant="contained"
+                      color="primary"
+                    >
+                      Live Demo
+                    </Button>
+                    <Button
+                      component="a"
+                      href={project.githubLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      variant="contained"
+                      color="secondary"
+                    >
+                      Source Code
+                    </Button>
+                  </div>
+                </div>
+              </Box>
+            </motion.div>
+          ))}
+        </motion.div>
+      </Container>
     </section>
   );
 };

@@ -1,80 +1,66 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { User, Briefcase, Code, Mail } from "lucide-react";
+import { Button } from "@mui/material"; // Material UI Button
 
 const Navbar = () => {
+  const handleResumeClick = () => {
+    window.open("/assets/resume.pdf", "_blank");
+  };
+
   return (
-    <nav className="h-screen w-64 bg-[#2C3E50] text-white flex flex-col justify-between p-6 shadow-lg fixed top-0 left-0">
+    <nav className="h-screen w-64 bg-gradient-to-b from-[#2C3E50] to-[#1a2632] text-white flex flex-col justify-between p-6 shadow-xl fixed top-0 left-0 border-r border-[#3d566b]">
       {/* Profile Section */}
       <div className="flex flex-col items-center mt-10 mb-10">
-        {/* Profile Picture */}
-        <img
-          src="/assets/Me5.jpg"  // Ensure the correct path for your profile image
-          alt="Neeraj Subramani"
-          className="w-28 h-28 rounded-full object-cover shadow-md border-4 border-[#16A085]"
-        />
+        {/* Profile Picture with Animation */}
+        <div className="relative group">
+          <div className="absolute -inset-0.5 bg-gradient-to-r from-[#16A085] to-[#F39C12] rounded-full blur opacity-25 group-hover:opacity-75 transition duration-300"></div>
+          <img
+            src="/assets/Me5.jpg"
+            alt="Neeraj Subramani"
+            className="relative w-28 h-28 rounded-full object-cover shadow-lg border-4 border-[#16A085] transform transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
         {/* Name and Tagline */}
-        <h2 className="mt-4 text-2xl font-semibold text-[#F39C12]">Neeraj Subramani</h2>
-        <p className="text-sm text-[#BDC3C7] text-center">Transforming ideas into interactive websites</p>
+        <h2 className="mt-6 text-2xl font-bold text-[#F39C12] tracking-wide">Neeraj Subramani</h2>
+        <p className="mt-2 text-sm text-[#BDC3C7] text-center font-medium leading-relaxed">
+          Transforming ideas into interactive websites
+        </p>
       </div>
 
       {/* Navigation Links */}
-      <div style={{marginTop:"-70px"}} className="flex flex-col items-start mt-8 flex-grow justify-center">
-        <NavLink
-          to="/about"
-          className={({ isActive }) =>
-            `flex items-center p-4 mb-4 w-full justify-start rounded-lg text-xl font-semibold ${
-              isActive
-                ? "bg-[#16A085] text-white"
-                : "hover:bg-[#1ABC9C] hover:text-white transition-all"
-            }`
-          } style={{fontSize: "25px"}}
-        >
-          <User className="mr-3" />
-          <b style={{marginLeft:"10px"}}>About</b>
-        </NavLink>
+      <div className="flex flex-col items-start flex-grow justify-start space-y-4">
+        {[ 
+          { to: "/about", icon: <User />, label: "About" },
+          { to: "/projects", icon: <Briefcase />, label: "Projects" },
+          { to: "/skills", icon: <Code />, label: "Skills" },
+          { to: "/contact", icon: <Mail />, label: "Contact" },
+        ].map(({ to, icon, label }) => (
+          <NavLink
+            key={to}
+            to={to}
+            className={({ isActive }) =>
+              `flex items-center p-4 w-full justify-start rounded-xl text-xl font-semibold transition-all duration-300 ${
+                isActive
+                  ? "bg-gradient-to-r from-[#16A085] to-[#1abc9c] text-white shadow-lg"
+                  : "hover:bg-[#1ABC9C]/20 text-[#ECF0F1]"
+              }`
+            }
+          >
+            {React.cloneElement(icon, { className: "w-6 h-6", strokeWidth: 2.5 })}
+            <span className="ml-4">{label}</span>
+          </NavLink>
+        ))}
+      </div>
 
-        <NavLink
-          to="/projects"
-          className={({ isActive }) =>
-            `flex items-center p-4 mb-4 w-full justify-start rounded-lg text-lg font-semibold ${
-              isActive
-                ? "bg-[#16A085] text-white"
-                : "hover:bg-[#1ABC9C] hover:text-white transition-all"
-            }`
-          } style={{fontSize: "25px"}}
+      {/* Resume Button */}
+      <div className="mt-[-15px] mb-4"> {/* Adding 'mt-auto' to push the button to the bottom */}
+        <button
+          onClick={handleResumeClick}
+          className="flex items-center p-[2px] w-full justify-start rounded-xl text-xl font-semibold transition-all duration-300 bg-gradient-to-r from-[#5b79d9] to-[#1abc9c] text-white shadow-lg hover:bg-[#1ABC9C]/70"
         >
-          <Briefcase className="mr-3" />
-          <b style={{marginLeft:"10px"}}>Projects</b>
-        </NavLink>
-
-        <NavLink
-          to="/skills"
-          className={({ isActive }) =>
-            `flex items-center p-4 mb-4 w-full justify-start rounded-lg text-lg font-semibold ${
-              isActive
-                ? "bg-[#16A085] text-white"
-                : "hover:bg-[#1ABC9C] hover:text-white transition-all"
-            }`
-          } style={{fontSize: "25px"}}
-        >
-          <Code className="mr-3" />
-          <b style={{marginLeft:"10px"}}>Skills</b>
-        </NavLink>
-
-        <NavLink
-          to="/contact"
-          className={({ isActive }) =>
-            `flex items-center p-4 mb-4 w-full justify-start rounded-lg text-lg font-semibold ${
-              isActive
-                ? "bg-[#16A085] text-white"
-                : "hover:bg-[#1ABC9C] hover:text-white transition-all"
-            }`
-          } style={{fontSize: "25px"}}
-        >
-          <Mail className="mr-3" />
-          <b style={{marginLeft:"10px"}}>Contact</b>
-        </NavLink>
+          <span  className="ml-[25px]">Download Resume</span>
+        </button>
       </div>
     </nav>
   );

@@ -1,74 +1,101 @@
-// src/components/Skills.jsx
-import React from "react";
+import React from 'react';
+import { Box, Typography, LinearProgress, Grid, Card, CardContent } from '@mui/material';
+import { motion } from 'framer-motion';
+import { Code, Build, Storage, People } from '@mui/icons-material';
+
+const skillsData = [
+  {
+    category: 'Frontend Development',
+    icon: <Code fontSize="large" color="primary" />, 
+    skills: [
+      { name: 'JavaScript', level: 90, percentage: '90%' },
+      { name: 'React.js', level: 85, percentage: '85%' },
+      { name: 'HTML & CSS', level: 95, percentage: '95%' },
+      { name: 'Tailwind CSS', level: 80, percentage: '80%' },
+    ],
+  },
+  {
+    category: 'Backend Development',
+    icon: <Build fontSize="large" color="secondary" />, 
+    skills: [
+      { name: 'Node.js', level: 80, percentage: '80%' },
+      { name: 'Express.js', level: 75, percentage: '75%' },
+      { name: 'MongoDB', level: 70, percentage: '70%' },
+      { name: 'MySQL', level: 75, percentage: '75%' },
+    ],
+  },
+  {
+    category: 'Development Tools',
+    icon: <Storage fontSize="large" color="success" />, 
+    skills: [
+      { name: 'Git & GitHub', level: 85, percentage: '85%' },
+      { name: 'Vercel', level: 80, percentage: '80%' },
+      { name: 'Render', level: 78, percentage: '78%' },
+      { name: 'Postman', level: 75, percentage: '75%' },
+    ],
+  },
+  {
+    category: 'Soft Skills',
+    icon: <People fontSize="large" color="error" />, 
+    skills: [
+      { name: 'Communication', level: 90, percentage: '90%' },
+      { name: 'Leadership', level: 85, percentage: '85%' },
+      { name: 'Problem-Solving', level: 88, percentage: '88%' },
+      { name: 'Time Management', level: 92, percentage: '92%' },
+    ],
+  },
+];
 
 const Skills = () => {
-  const technicalSkills = [
-    { name: "JavaScript", description: "Core JavaScript and ES6+ features" },
-    { name: "React.js", description: "Building dynamic web applications with React" },
-    { name: "Node.js", description: "Creating server-side applications with Node.js" },
-    { name: "MongoDB", description: "Efficient data management with MongoDB (NoSQL)" },
-    { name: "Express.js", description: "Building scalable APIs and backend logic with Express.js" },
-    { name: "MySQL", description: "Experience with relational databases and CRUD operations" },
-    { name: "GitHub", description: "Collaborative development and version control with GitHub" },
-    { name: "Vercel", description: "Deploying web applications on Vercel" },
-    { name: "Render", description: "Deployment of both frontend and backend on Render" },
-    { name: "Tailwind CSS", description: "Building responsive designs using Tailwind CSS" },
-    { name: "HTML/CSS", description: "Creating structured, responsive web pages" },
-    { name: "API Integration", description: "Integrating external APIs (e.g., Amadeus, Stripe)" },
-  ];
-
-  const softSkills = [
-    { name: "Communication", description: "Effective communication with teams and stakeholders" },
-    { name: "Time Management", description: "Skilled in prioritizing tasks and meeting deadlines" },
-    { name: "Team Leader", description: "Led teams towards achieving project goals" },
-    { name: "Team Player", description: "Collaborative and supportive in team settings" },
-  ];
-
   return (
-    <section style={{marginLeft:"110px",backgroundColor:""}} className="ml-64 p-8 bg-[#2C3E50] min-h-screen">
-      <div className="max-w-4xl mx-auto">
-        {/* Skills Heading */}
-        {/* <h1 className="text-5xl font-extrabold text-[#F1C40F] mb-8 text-center underline decoration-4 underline-offset-4 text-transparent bg-clip-text bg-gradient-to-r from-[#F1C40F] to-[#F39C12]">
-          Skills
-        </h1> */}
+    <Box sx={{ backgroundColor: '#121212', color: '#ffffff', minHeight: '100vh', py: 4, px: 4, ml: 10 }}>
+      <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }}>
+        <Typography variant="h3" align="center" gutterBottom sx={{ fontWeight: 'bold', color: '#00e676' }}>
+          My Skills
+        </Typography>
+      </motion.div>
 
-        {/* Technical Skills Section */}
-        <div className="mb-12">
-          <h2 className="text-3xl font-semibold text-[#F1C40F] mb-6 text-center">
-            Technical Skills
-          </h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
-            {technicalSkills.map((skill, index) => (
-              <div
-                key={index}
-                className="bg-[#0d0e0f] p-6 rounded-lg shadow-lg hover:shadow-2xl transition-all ease-in-out duration-300 transform hover:scale-105"
-              >
-                <h3 className="text-2xl font-semibold text-[#F1C40F] mb-2">{skill.name}</h3>
-                <p className="text-sm text-[#BDC3C7]">{skill.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Soft Skills Section */}
-        <div style={{marginTop:"-10px"}}>
-          <h2  className="text-3xl font-semibold text-[#BDC3C7] mb-6 text-center">
-            Soft Skills
-          </h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
-            {softSkills.map((skill, index) => (
-              <div
-                key={index}
-                className="bg-[#293c94] p-6 rounded-lg shadow-md hover:shadow-lg transition-all ease-in-out duration-300 transform hover:scale-105"
-              >
-                <h3 className="text-2xl font-semibold text-white mb-2">{skill.name}</h3>
-                <p className="text-sm text-[#BDC3C7]">{skill.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
+      <Grid container spacing={4} justifyContent="center">
+        {skillsData.map((category, index) => (
+          <Grid item xs={12} md={6} key={index}>
+            <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5 }}>
+              <Card sx={{ backgroundColor: '#1e1e1e', color: '#ffffff', borderRadius: 2, boxShadow: 5 }}>
+                <CardContent>
+                  <Box display="flex" alignItems="center" mb={2}>
+                    {category.icon}
+                    <Typography variant="h5" sx={{ ml: 2, fontWeight: 'bold', color: '#64b5f6' }}>
+                      {category.category}
+                    </Typography>
+                  </Box>
+                  {category.skills.map((skill, i) => (
+                    <Box key={i} mb={2}>
+                      <Box display="flex" justifyContent="space-between" alignItems="center">
+                        <Typography variant="subtitle1" sx={{ fontWeight: 'bold', color: '#ffffff' }}>
+                          {skill.name}
+                        </Typography>
+                        <Typography variant="subtitle2" sx={{ fontWeight: 'bold', color: '#00e676' }}>
+                          {skill.percentage}
+                        </Typography>
+                      </Box>
+                      <LinearProgress 
+                        variant="determinate" 
+                        value={skill.level} 
+                        sx={{ 
+                          height: 8, 
+                          borderRadius: 1, 
+                          backgroundColor: '#424242', 
+                          '& .MuiLinearProgress-bar': { backgroundColor: '#00e676' } 
+                        }} 
+                      />
+                    </Box>
+                  ))}
+                </CardContent>
+              </Card>
+            </motion.div>
+          </Grid>
+        ))}
+      </Grid>
+    </Box>
   );
 };
 
