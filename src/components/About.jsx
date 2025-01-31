@@ -8,7 +8,7 @@ const About = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
-      className="min-h-screen bg-gradient-custom py-16 px-[40px] ml-[140px]"
+      className="min-h-screen bg-gradient-custom py-16 px-[40px] ml-[140px] mr-[-50px]"
     >
       <Container maxWidth="lg">
         {/* Heading */}
