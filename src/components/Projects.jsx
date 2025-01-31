@@ -103,7 +103,7 @@ const Projects = () => {
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="mb-12"
+          className="mb-12 px-[140px] "
         >
           <Typography variant="h3" gutterBottom style={{ fontWeight: 'bold', color: '#fff' }}>
             Featured <span style={{ color: '#4c6ef5' }}>Projects</span>
@@ -115,7 +115,7 @@ const Projects = () => {
           variants={container}
           initial="hidden"
           animate="show"
-          className="row row-cols-1 row-cols-md-2 g-4"
+          className="row row-cols-1 row-cols-md-2 g-4 px-[80px]"
         >
           {projects.map((project) => (
             <motion.div key={project.id} variants={item} className="col">

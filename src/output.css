@@ -46,8 +46,20 @@
 .ml-\[120px\] {
   margin-left: 120px;
 }
+.ml-\[130px\] {
+  margin-left: 130px;
+}
 .ml-\[140px\] {
   margin-left: 140px;
+}
+.ml-\[150px\] {
+  margin-left: 150px;
+}
+.ml-\[200px\] {
+  margin-left: 200px;
+}
+.ml-\[220px\] {
+  margin-left: 220px;
 }
 .flex {
   display: flex;
@@ -174,8 +186,17 @@
 .px-\[50px\] {
   padding-inline: 50px;
 }
+.px-\[80px\] {
+  padding-inline: 80px;
+}
+.px-\[100px\] {
+  padding-inline: 100px;
+}
 .px-\[140px\] {
   padding-inline: 140px;
+}
+.px-\[240px\] {
+  padding-inline: 240px;
 }
 .py-\[30px\] {
   padding-block: 30px;
