@@ -32,7 +32,7 @@ const Contact = () => {
   ];
 
   return (
-    <Container style={{marginLeft:"120px"}} className="py-3">
+    <Container style={{marginLeft:"120px"}} className="py-[30px] px-[30px] ">
       <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-4">
         <Typography variant="h3" className="fw-bold text-primary">Get in Touch</Typography>
       </motion.div>

@@ -48,7 +48,7 @@ const skillsData = [
 
 const Skills = () => {
   return (
-    <Box sx={{ backgroundColor: '#121212', color: '#ffffff', minHeight: '100vh', py: 4, px: 4, ml: 15 }}>
+    <Box sx={{ backgroundColor: '#121212', color: '#ffffff', minHeight: '100vh', py: 4, px: "50px", ml: 15 }}>
       <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }}>
         <Typography variant="h3" align="center" gutterBottom sx={{ fontWeight: 'bold', color: '#00e676' }}>
           My Skills

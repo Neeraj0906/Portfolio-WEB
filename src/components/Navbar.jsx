@@ -54,7 +54,7 @@ const Navbar = () => {
       </div>
 
       {/* Resume Button */}
-      <div className="mt-[-15px] mb-4"> {/* Adding 'mt-auto' to push the button to the bottom */}
+      <div className="mt-[-20px] mb-4"> {/* Adding 'mt-auto' to push the button to the bottom */}
         <button
           onClick={handleResumeClick}
           className="flex items-center p-[2px] w-full justify-start rounded-xl text-xl font-semibold transition-all duration-300 bg-gradient-to-r from-[#5b79d9] to-[#1abc9c] text-white shadow-lg hover:bg-[#1ABC9C]/70"

@@ -16,11 +16,20 @@
 .mx-auto {
   margin-inline: auto;
 }
+.mt-\[-10px\] {
+  margin-top: -10px;
+}
 .mt-\[-15px\] {
   margin-top: -15px;
 }
+.mt-\[-20px\] {
+  margin-top: -20px;
+}
 .mt-auto {
   margin-top: auto;
+}
+.ml-\[20px\] {
+  margin-left: 20px;
 }
 .ml-\[25px\] {
   margin-left: 25px;
@@ -143,6 +152,27 @@
 }
 .p-\[2px\] {
   padding: 2px;
+}
+.px-\[20px\] {
+  padding-inline: 20px;
+}
+.px-\[30px\] {
+  padding-inline: 30px;
+}
+.px-\[40px\] {
+  padding-inline: 40px;
+}
+.px-\[50px\] {
+  padding-inline: 50px;
+}
+.py-\[30px\] {
+  padding-block: 30px;
+}
+.py-\[3px\] {
+  padding-block: 3px;
+}
+.py-\[40px\] {
+  padding-block: 40px;
 }
 .text-center {
   text-align: center;
