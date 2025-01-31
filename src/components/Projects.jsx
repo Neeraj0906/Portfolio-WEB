@@ -98,7 +98,7 @@ const Projects = () => {
   };
 
   return (
-    <section className="bg-gray-50 py-20 ml-[100px]" style={{ backgroundColor: "#273746" }}>
+    <section className="bg-gray-50 py-20 ml-[120px]" style={{ backgroundColor: "#273746" }}>
       <Container>
         <motion.div
           initial={{ opacity: 0, x: -20 }}
