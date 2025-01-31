@@ -37,8 +37,17 @@
 .ml-\[100px\] {
   margin-left: 100px;
 }
+.ml-\[110px\] {
+  margin-left: 110px;
+}
+.ml-\[1200px\] {
+  margin-left: 1200px;
+}
 .ml-\[120px\] {
   margin-left: 120px;
+}
+.ml-\[140px\] {
+  margin-left: 140px;
 }
 .flex {
   display: flex;
