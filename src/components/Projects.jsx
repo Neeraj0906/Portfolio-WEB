@@ -98,12 +98,12 @@ const Projects = () => {
   };
 
   return (
-    <section className="bg-gray-50 py-[30px] ml-[120px] px-[140px] mr-[-200px]" style={{ backgroundColor: "#273746" }}>
+    <section className="bg-gray-50 py-[30px] ml-[120px] px-[40px] mr-[-200px] z-10" style={{ backgroundColor: "#273746" }}>
       <Container>
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="mb-12 px-[140px] "
+          className="mb-12"
         >
           <Typography variant="h3" gutterBottom style={{ fontWeight: 'bold', color: '#fff' }}>
             Featured <span style={{ color: '#4c6ef5' }}>Projects</span>
@@ -115,16 +115,16 @@ const Projects = () => {
           variants={container}
           initial="hidden"
           animate="show"
-          className="row row-cols-1 row-cols-md-2 g-4 px-[80px]"
+          className="row row-cols-1 row-cols-md-2 g-4"
         >
           {projects.map((project) => (
             <motion.div key={project.id} variants={item} className="col">
-              <Box className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+              <Box className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 relative">
                 <div className="relative group">
                   <img
                     src={project.image}
                     alt={project.name}
-                    className="w-full h-48 object-cover object-top"
+                    className="w-full h-48 object-cover object-top transition-transform duration-300 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <div className="flex space-x-4">
@@ -159,33 +159,43 @@ const Projects = () => {
                     <Typography variant="h5" component="h2" style={{ fontWeight: 'bold' }}>
                       {project.name}
                     </Typography>
-                    <Badge color="primary" badgeContent={project.type} />
+                    {/* Styled Badge for Full Stack/Frontend */}
+                    <Badge
+                      color="primary"
+                      className="text-white text-sm font-semibold px-3 py-1 rounded-lg shadow-md"
+                      style={{
+                        backgroundColor: project.type === 'Full Stack' ? '#2b8a3e' : '#006f8e',
+                        whiteSpace: 'nowrap',
+                        maxWidth: '100%'
+                      }}
+                    >
+                      {project.type}
+                    </Badge>
                   </div>
 
                   <p className="text-gray-600 mb-4">{project.summary}</p>
 
                   <div className="mb-4">
-  <Typography
-    variant="h6"
-    color="textPrimary"
-    style={{ fontWeight: 'bold', fontSize: '1.2rem' }}
-    gutterBottom
-  >
-    <Code className="w-4 h-4 mr-2" />
-    Tech Stack
-  </Typography>
-  <div className="flex flex-wrap gap-3">
-    {project.techStack.map((tech, index) => (
-      <span
-        key={index}
-        className="text-gray-800 text-lg font-medium border border-gray-300 px-3 py-1 rounded-md"
-      >
-        {tech}
-      </span>
-    ))}
-  </div>
-</div>
-
+                    <Typography
+                      variant="h6"
+                      color="textPrimary"
+                      style={{ fontWeight: 'bold', fontSize: '1.2rem' }}
+                      gutterBottom
+                    >
+                      <Code className="w-4 h-4 mr-2" />
+                      Tech Stack
+                    </Typography>
+                    <div className="flex flex-wrap gap-3">
+                      {project.techStack.map((tech, index) => (
+                        <span
+                          key={index}
+                          className="text-gray-800 text-lg font-medium border border-gray-300 px-3 py-1 rounded-md"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
 
                   <div className="d-flex justify-content-between">
                     <Button

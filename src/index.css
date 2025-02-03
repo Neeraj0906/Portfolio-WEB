@@ -90,3 +90,14 @@ p {
 .paper {
   color: var(--paper-text-color); /* Sea Green */
 }
+
+/* Add these styles to the global CSS or a dedicated styles file */
+.content-wrapper {
+  padding-left: 260px;  /* Adjust the value to match your sidebar width */
+}
+
+@media (max-width: 768px) {
+  .content-wrapper {
+    padding-left: 0;  /* Remove padding on mobile screens */
+  }
+}

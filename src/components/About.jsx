@@ -8,7 +8,7 @@ const About = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
-      className="min-h-screen bg-gradient-custom py-16 px-[40px] ml-[140px] mr-[-50px]"
+      className="min-h-screen bg-gradient-custom py-16 px-[40px] content-wrapper"
     >
       <Container maxWidth="lg">
         {/* Heading */}
@@ -39,19 +39,18 @@ const About = () => {
             </Paper>
           </Grid>
 
-         {/* Education Section */}
-<Grid item xs={12} md={6}>
-  <Paper elevation={5} className="p-6 bg-white rounded-lg shadow-lg paper">
-    <Typography variant="h5" component="h3" style={{ color: 'var(--primary-color)' }} gutterBottom>
-      Education
-    </Typography>
-    <Typography variant="body1" style={{ color: 'var(--paper-text-color)' }}>
-      I earned a <strong>Bachelor’s degree in Computer Science</strong> from <strong>Dayananda Sagar University</strong> (2020 - 2024).  
-      During my studies, I developed a strong foundation in web development and full-stack technologies through hands-on projects.
-    </Typography>
-  </Paper>
-</Grid>
-
+          {/* Education Section */}
+          <Grid item xs={12} md={6}>
+            <Paper elevation={5} className="p-6 bg-white rounded-lg shadow-lg paper">
+              <Typography variant="h5" component="h3" style={{ color: 'var(--primary-color)' }} gutterBottom>
+                Education
+              </Typography>
+              <Typography variant="body1" style={{ color: 'var(--paper-text-color)' }}>
+                I earned a <strong>Bachelor’s degree in Computer Science</strong> from <strong>Dayananda Sagar University</strong> (2020 - 2024).  
+                During my studies, I developed a strong foundation in web development and full-stack technologies through hands-on projects.
+              </Typography>
+            </Paper>
+          </Grid>
 
           {/* What I Do Section */}
           <Grid item xs={12}>
