@@ -10,6 +10,12 @@
 .relative {
   position: relative;
 }
+.top-\[0px\] {
+  top: 0px;
+}
+.top-\[10px\] {
+  top: 10px;
+}
 .z-10 {
   z-index: 10;
 }
@@ -22,11 +28,23 @@
 .mt-\[-20px\] {
   margin-top: -20px;
 }
+.mt-\[-2px\] {
+  margin-top: -2px;
+}
+.mt-\[-12px\] {
+  margin-top: -12px;
+}
+.mt-\[2px\] {
+  margin-top: 2px;
+}
+.mt-\[60px\] {
+  margin-top: 60px;
+}
+.mt-\[6px\] {
+  margin-top: 6px;
+}
 .mt-auto {
   margin-top: auto;
-}
-.mr-\[-50px\] {
-  margin-right: -50px;
 }
 .mr-\[-200px\] {
   margin-right: -200px;
@@ -36,9 +54,6 @@
 }
 .ml-\[120px\] {
   margin-left: 120px;
-}
-.ml-\[140px\] {
-  margin-left: 140px;
 }
 .flex {
   display: flex;
@@ -54,6 +69,21 @@
 }
 .min-h-screen {
   min-height: 100vh;
+}
+.w-\[20\%\] {
+  width: 20%;
+}
+.w-\[23\%\] {
+  width: 23%;
+}
+.w-\[24\%\] {
+  width: 24%;
+}
+.w-\[25\%\] {
+  width: 25%;
+}
+.w-\[245\] {
+  width: 245;
 }
 .w-full {
   width: 100%;
@@ -155,12 +185,6 @@
 }
 .px-\[40px\] {
   padding-inline: 40px;
-}
-.px-\[80px\] {
-  padding-inline: 80px;
-}
-.px-\[140px\] {
-  padding-inline: 140px;
 }
 .py-\[30px\] {
   padding-block: 30px;
