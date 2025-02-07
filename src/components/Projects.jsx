@@ -6,6 +6,7 @@ import { Container } from 'react-bootstrap';
 
 const Projects = () => {
   const projects = [
+    // Full-Stack Projects
     {
       id: 1,
       name: "Flights.com",
@@ -92,6 +93,8 @@ const Projects = () => {
       githubBackendLink: "https://github.com/Neeraj0906/Habit-Tracker-Backend",
       type: "Full Stack"
     },
+
+    // Frontend-Only Projects
     {
       id: 5,
       name: "FakeStoreApi E-commerce",
@@ -195,84 +198,6 @@ const Projects = () => {
                     alt={project.name}
                     className="w-full h-48 object-cover object-top transition-transform duration-300 group-hover:scale-110"
                   />
-                  {/* Hover Overlay */}
-                  <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <div className="flex space-x-4">
-                      {project.type === "Full Stack" ? (
-                        <>
-                          <Button
-                            component="a"
-                            href={project.vercelLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            variant="contained"
-                            color="primary"
-                            className="p-2 rounded-full"
-                          >
-                            <ExternalLink />
-                          </Button>
-                          <Button
-                            component="a"
-                            href={project.renderLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            variant="contained"
-                            color="secondary"
-                            className="p-2 rounded-full"
-                          >
-                            Backend Demo
-                          </Button>
-                          <Button
-                            component="a"
-                            href={project.githubFrontendLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            variant="contained"
-                            color="success"
-                            className="p-2 rounded-full"
-                          >
-                            <Github />
-                          </Button>
-                          <Button
-                            component="a"
-                            href={project.githubBackendLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            variant="contained"
-                            color="info"
-                            className="p-2 rounded-full"
-                          >
-                            Backend Code
-                          </Button>
-                        </>
-                      ) : (
-                        <>
-                          <Button
-                            component="a"
-                            href={project.vercelLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            variant="contained"
-                            color="primary"
-                            className="p-2 rounded-full"
-                          >
-                            <ExternalLink />
-                          </Button>
-                          <Button
-                            component="a"
-                            href={project.githubLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            variant="contained"
-                            color="secondary"
-                            className="p-2 rounded-full"
-                          >
-                            <Github />
-                          </Button>
-                        </>
-                      )}
-                    </div>
-                  </div>
                 </div>
 
                 {/* Project Details */}
@@ -315,6 +240,85 @@ const Projects = () => {
                         </span>
                       ))}
                     </div>
+                  </div>
+
+                  {/* Buttons Section */}
+                  <div className="flex flex-wrap gap-3 mt-4">
+                    {/* Buttons for Full-Stack Projects */}
+                    {project.type === "Full Stack" ? (
+                      <>
+                        <Button
+                          component="a"
+                          href={project.vercelLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          variant="contained"
+                          color="primary"
+                          className="p-2 rounded-full"
+                        >
+                          Frontend Demo
+                        </Button>
+                        <Button
+                          component="a"
+                          href={project.renderLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          variant="contained"
+                          color="secondary"
+                          className="p-2 rounded-full"
+                        >
+                          Backend Demo
+                        </Button>
+                        <Button
+                          component="a"
+                          href={project.githubFrontendLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          variant="contained"
+                          color="success"
+                          className="p-2 rounded-full"
+                        >
+                          Frontend Code
+                        </Button>
+                        <Button
+                          component="a"
+                          href={project.githubBackendLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          variant="contained"
+                          color="info"
+                          className="p-2 rounded-full"
+                        >
+                          Backend Code
+                        </Button>
+                      </>
+                    ) : (
+                      /* Buttons for Frontend Projects */
+                      <>
+                        <Button
+                          component="a"
+                          href={project.vercelLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          variant="contained"
+                          color="primary"
+                          className="p-2 rounded-full"
+                        >
+                          Live Demo
+                        </Button>
+                        <Button
+                          component="a"
+                          href={project.githubLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          variant="contained"
+                          color="secondary"
+                          className="p-2 rounded-full"
+                        >
+                          Source Code
+                        </Button>
+                      </>
+                    )}
                   </div>
                 </div>
               </Box>
