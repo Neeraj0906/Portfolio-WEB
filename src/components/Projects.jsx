@@ -93,7 +93,6 @@ const Projects = () => {
       githubBackendLink: "https://github.com/Neeraj0906/Habit-Tracker-Backend",
       type: "Full Stack"
     },
-
     // Frontend-Only Projects
     {
       id: 5,
@@ -167,7 +166,7 @@ const Projects = () => {
   };
 
   return (
-    <section className="bg-gray-50 py-[30px] ml-[20%] px-[40px]" style={{ backgroundColor: "#273746" }}>
+    <section className="bg-gray-900 py-[30px] ml-[20%] px-[40px]" style={{ backgroundColor: "#1C2833" }}>
       <Container>
         {/* Heading */}
         <motion.div
@@ -175,7 +174,7 @@ const Projects = () => {
           animate={{ opacity: 1, x: 0 }}
           className="mb-12"
         >
-          <Typography variant="h3" gutterBottom style={{ fontWeight: 'bold', color: '#fff' }}>
+          <Typography variant="h3" gutterBottom style={{ fontWeight: 'bold', color: '#FFD700' }}>
             Featured <span style={{ color: '#4c6ef5' }}>Projects</span>
           </Typography>
           <div className="h-1 w-20 bg-indigo-600 rounded-full"></div>
@@ -190,7 +189,7 @@ const Projects = () => {
         >
           {projects.map((project) => (
             <motion.div key={project.id} variants={item} className="col">
-              <Box className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 relative">
+              <Box className="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 relative">
                 {/* Project Image */}
                 <div className="relative group">
                   <img
@@ -203,7 +202,7 @@ const Projects = () => {
                 {/* Project Details */}
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-4">
-                    <Typography variant="h5" component="h2" style={{ fontWeight: 'bold' }}>
+                    <Typography variant="h5" component="h2" style={{ fontWeight: 'bold', color: '#1E90FF' }}>
                       {project.name}
                     </Typography>
                     {/* Styled Badge for Full Stack/Frontend */}
@@ -219,12 +218,12 @@ const Projects = () => {
                       {project.type}
                     </Badge>
                   </div>
-                  <p className="text-gray-600 mb-4">{project.summary}</p>
+                  <p className="text-gray-300 mb-4">{project.summary}</p>
                   <div className="mb-4">
                     <Typography
                       variant="h6"
                       color="textPrimary"
-                      style={{ fontWeight: 'bold', fontSize: '1.2rem' }}
+                      style={{ fontWeight: 'bold', fontSize: '1.2rem', color: '#FFA500' }}
                       gutterBottom
                     >
                       <Code className="w-4 h-4 mr-2" />
@@ -234,7 +233,12 @@ const Projects = () => {
                       {project.techStack.map((tech, index) => (
                         <span
                           key={index}
-                          className="text-gray-800 text-lg font-medium border border-gray-300 px-3 py-1 rounded-md"
+                          className="text-black text-lg font-medium border border-gray-300 px-3 py-1 rounded-md"
+                          style={{
+                            backgroundColor: index % 2 === 0 ? '#F5F5F5' : '#E0E0E0',
+                            boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+                            transition: 'transform 0.2s ease-in-out'
+                          }}
                         >
                           {tech}
                         </span>
@@ -243,83 +247,102 @@ const Projects = () => {
                   </div>
 
                   {/* Buttons Section */}
-                  <div className="flex flex-wrap gap-3 mt-4">
+                  <div className="flex flex-wrap justify-between mt-4">
                     {/* Buttons for Full-Stack Projects */}
                     {project.type === "Full Stack" ? (
                       <>
-                        <Button
-                          component="a"
-                          href={project.vercelLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          variant="contained"
-                          color="primary"
-                          className="p-2 rounded-full"
-                        >
-                          Frontend Demo
-                        </Button>
-                        <Button
-                          component="a"
-                          href={project.renderLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          variant="contained"
-                          color="secondary"
-                          className="p-2 rounded-full"
-                          style={{marginLeft:"61.4px"}}
-                        >
-                          Backend Demo
-                        </Button>
-                        <Button
-                          component="a"
-                          href={project.githubFrontendLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          variant="contained"
-                          color="success"
-                          className="p-2 rounded-full"
-                        >
-                          Frontend Code
-                        </Button>
-                        <Button
-                          component="a"
-                          href={project.githubBackendLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          variant="contained"
-                          color="info"
-                          className="p-2 rounded-full"
-                          style={{marginLeft:"65.1px"}}
-                        >
-                          Backend Code
-                        </Button>
+                        {/* Left Side Buttons */}
+                        <div className="flex space-x-3">
+                          <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                            <Button
+                              component="a"
+                              href={project.vercelLink}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              variant="contained"
+                              color="primary"
+                              className="p-2 rounded-full"
+                            >
+                              Frontend Demo
+                            </Button>
+                          </motion.div>
+                          <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                            <Button
+                              component="a"
+                              href={project.githubFrontendLink}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              variant="contained"
+                              color="success"
+                              className="p-2 rounded-full"
+                              style={{marginLeft:"70px"}}
+                            >
+                              Frontend Code
+                            </Button>
+                          </motion.div>
+                        </div>
+                        {/* Right Side Buttons */}
+                        <div className="flex space-x-3">
+                          <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                            <Button
+                              component="a"
+                              href={project.renderLink}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              variant="contained"
+                              color="secondary"
+                              className="p-2 rounded-full"
+                            >
+                              Backend - Demo
+                            </Button>
+                          </motion.div>
+                          <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                            <Button
+                              component="a"
+                              href={project.githubBackendLink}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              variant="contained"
+                              color="info"
+                              className="p-2 rounded-full"
+                              style={{marginLeft:"72px"}}
+                            >
+                              Backend - Code
+                            </Button>
+                          </motion.div>
+                        </div>
                       </>
                     ) : (
                       /* Buttons for Frontend Projects */
                       <>
-                        <Button
-                          component="a"
-                          href={project.vercelLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          variant="contained"
-                          color="primary"
-                          className="p-2 rounded-full"
-                        >
-                          Live Demo
-                        </Button>
-                        <Button
-                          component="a"
-                          href={project.githubLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          variant="contained"
-                          color="secondary"
-                          className="p-2 rounded-full"
-                          style={{marginLeft:"132px"}}
-                        >
-                          Source Code
-                        </Button>
+                        {/* Left Side Button */}
+                        <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                          <Button
+                            component="a"
+                            href={project.vercelLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            variant="contained"
+                            color="primary"
+                            className="p-2 rounded-full"
+                          >
+                            Live Demo
+                          </Button>
+                        </motion.div>
+                        {/* Right Side Button */}
+                        <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                          <Button
+                            component="a"
+                            href={project.githubLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            variant="contained"
+                            color="secondary"
+                            className="p-2 rounded-full"
+                          >
+                            Source Code
+                          </Button>
+                        </motion.div>
                       </>
                     )}
                   </div>
