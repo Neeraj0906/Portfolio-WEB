@@ -22,9 +22,9 @@ const Navbar = () => {
         </div>
         {/* Name and Tagline */}
         <h2 className="mt-4 text-sm font-bold text-[#F39C12] tracking-wide">Neeraj Subramani</h2>
-        <p className="text-xs text-[#BDC3C7] text-center font-medium leading-relaxed">
-          Transforming ideas into interactive websites
-        </p>
+        <h2 className="text-xs text-[#BDC3C7] text-center font-medium leading-relaxed">
+          {/* Transforming ideas into interactive websites */}
+        </h2>
       </div>
 
       {/* Navigation Links */}
@@ -53,7 +53,7 @@ const Navbar = () => {
       </div>
 
       {/* Resume Button */}
-      <div className="mt-auto">
+      <div className="mt-[20px]">
         <button
           onClick={handleResumeClick}
           className="flex items-center p-2 w-full justify-start rounded-lg text-sm font-semibold transition-all duration-300 bg-gradient-to-r from-[#5b79d9] to-[#1abc9c] text-white shadow-lg hover:bg-[#1ABC9C]/70"
