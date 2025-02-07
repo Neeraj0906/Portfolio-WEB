@@ -1,18 +1,18 @@
 import React from "react";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";  // Make sure the Navbar path is correct
-import About from "./components/About";  // Assuming you have these components
-import Projects from "./components/Projects";  // Same for Projects
-import Skills from "./components/Skills";  // Assuming you have a Skills component
-import Contact from "./components/Contact";  // Assuming you have a Contact component
+import Navbar from "./components/Navbar";
+import About from "./components/About";
+import Projects from "./components/Projects";
+import Skills from "./components/Skills";
+import Contact from "./components/Contact";
 
 function App() {
   return (
     <Router>
       <Navbar />
-      <div className="ml-64"> {/* This ensures the content isn't hidden behind the sidebar */}
+      <div className="ml-64">
         <Routes>
-          <Route path="/" element={<About />} />  {/* Home page */}
+          <Route path="/" element={<About />} />
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/skills" element={<Skills />} />

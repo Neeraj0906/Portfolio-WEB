@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom styles */
+/* Root Styles */
 :root {
   --primary-color: #4682B4; /* Steel Blue */
   --secondary-color: #20B2AA; /* Light Sea Green */
@@ -13,35 +13,11 @@
   --heading-color: #FFD700; /* Gold for headings */
   --text-color: #B0C4DE; /* Light Steel Blue for general text */
   --paper-text-color: #273215; /* Sea Green for card text */
-  
+
   font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   font-size: larger;
-}
-
-/* Link styles */
-a {
-  font-weight: 500;
-  color: var(--primary-color);
-  text-decoration: inherit;
-}
-a:hover {
-  color: var(--secondary-color);
-}
-
-/* Button styles */
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  background-color: var(--secondary-color);
-  color: white; /* Ensure text is readable */
-}
-button:hover {
-  border-color: var(--accent-color);
 }
 
 /* Sidebar Styling */
@@ -49,57 +25,42 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
-  height: 100vh; 
-  z-index: 1000; 
+  width: 20%; /* Reduced width */
+  height: 100vh;
+  z-index: 1000;
+  background: linear-gradient(to bottom, var(--dark-bg-gradient-start), var(--dark-bg-gradient-end));
+  padding: 1rem;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 /* Body Styling */
 body {
-  margin-left: 16rem; 
+  margin-left: 20%; /* Match the sidebar width */
   padding: 0;
   font-family: 'Inter', sans-serif;
   background-color: var(--light-bg-color);
 }
 
 /* Section Margin */
-section.ml-64 {
-  margin-left: 16rem; 
+section {
+  margin-left: 20%; /* Match the sidebar width */
 }
 
-/* Card Hover Effect */
-.card:hover {
-  transform: scale(1.05);
-  transition: transform 0.2s ease-in-out;
-}
-
-/* Background Gradient */
-.bg-gradient-custom {
-    background-image: linear-gradient(to bottom, var(--dark-bg-gradient-start), var(--dark-bg-gradient-end));
-}
-
-/* Typography Styles */
-h1, h2, h3 {
-  color: var(--heading-color); /* Gold */
-}
-
-p {
-  color: var(--text-color); /* Light Steel Blue */
-}
-
-/* Cards */
-.paper {
-  color: var(--paper-text-color); /* Sea Green */
-}
-
-/* Add these styles to the global CSS or a dedicated styles file */
-.content-wrapper {
-  padding-left: 260px;  /* Adjust the value to match your sidebar width */
-}
-
+/* Responsive Design */
 @media (max-width: 768px) {
-  .content-wrapper {
-    padding-left: 0;  /* Remove padding on mobile screens */
+  nav {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0.5rem;
+  }
+
+  body,
+  section {
+    margin-left: 0;
   }
 }
-
-
