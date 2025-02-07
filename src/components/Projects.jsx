@@ -23,11 +23,77 @@ const Projects = () => {
         "JWT Auth"
       ],
       vercelLink: "https://flight-frontend-zeta.vercel.app/",
-      githubLink: "https://github.com/Neeraj0906/FLIGHT-frontend",
+      renderLink: "https://flight-backend-twe1.onrender.com/",
+      githubFrontendLink: "https://github.com/Neeraj0906/FLIGHT-frontend",
+      githubBackendLink: "https://github.com/Neeraj0906/FLIGHT-backend",
       type: "Full Stack"
     },
     {
       id: 2,
+      name: "Portfolio",
+      image: "/assets/portfolio.png", // Placeholder image
+      summary: "A personal portfolio website showcasing my skills, projects, and contact information.",
+      details: "This portfolio website is built using modern technologies like React, Node.js, and Tailwind CSS. It includes animations, Material UI components, and a responsive design.",
+      techStack: [
+        "MongoDB",
+        "React",
+        "Node.js",
+        "Express",
+        "Tailwind CSS",
+        "Framer Motion",
+        "Material UI"
+      ],
+      vercelLink: "https://portfolio-web-two-henna.vercel.app/",
+      renderLink: "https://portfolio-backend-kfna.onrender.com/",
+      githubFrontendLink: "https://github.com/Neeraj0906/Portfolio-WEB",
+      githubBackendLink: "https://github.com/Neeraj0906/portfolio-Backend",
+      type: "Full Stack"
+    },
+    {
+      id: 3,
+      name: "AI Recipe Generator",
+      image: "/assets/Ai-Recipe-Generator.png", // Placeholder image
+      summary: "An AI-powered recipe generator that suggests recipes based on ingredients provided.",
+      details: "This project uses the TogetherAI API to generate recipes dynamically. Users can input ingredients, and the app provides step-by-step instructions for preparing a dish.",
+      techStack: [
+        "MongoDB",
+        "React",
+        "Node.js",
+        "Express",
+        "TogetherAI API",
+        "Tailwind CSS",
+        "Framer Motion",
+        "Material UI"
+      ],
+      vercelLink: "https://ai-recipe-generator-delta.vercel.app/",
+      renderLink: "https://recipe-backend-fsd.onrender.com/",
+      githubFrontendLink: "https://github.com/Neeraj0906/Ai-Recipe-Generator",
+      githubBackendLink: "https://github.com/Neeraj0906/Recipe-Backend-FSD",
+      type: "Full Stack"
+    },
+    {
+      id: 4,
+      name: "Habit Tracker",
+      image: "/assets/Habit-tracker.png", // Placeholder image
+      summary: "A visually appealing habit tracker app that helps users set goals and track progress.",
+      details: "This app allows users to create habits, track their daily progress, and earn points for consistency. The interface is designed to be engaging and motivating.",
+      techStack: [
+        "MongoDB",
+        "React",
+        "Node.js",
+        "Express",
+        "Tailwind CSS",
+        "Framer Motion",
+        "Material UI"
+      ],
+      vercelLink: "https://habit-tracker-frontend-opal.vercel.app/",
+      renderLink: "https://habit-tracker-backend-b8nl.onrender.com/",
+      githubFrontendLink: "https://github.com/Neeraj0906/Habit-Tracker-frontend",
+      githubBackendLink: "https://github.com/Neeraj0906/Habit-Tracker-Backend",
+      type: "Full Stack"
+    },
+    {
+      id: 5,
       name: "FakeStoreApi E-commerce",
       image: "/assets/FakeStoreApi.png",
       summary: "Feature-rich e-commerce platform with product management, cart functionality, and checkout process.",
@@ -46,7 +112,7 @@ const Projects = () => {
       type: "Frontend"
     },
     {
-      id: 3,
+      id: 6,
       name: "Memory Game",
       image: "/assets/Memory Game.png",
       summary: "Interactive memory matching game with score tracking and animations.",
@@ -64,7 +130,7 @@ const Projects = () => {
       type: "Frontend"
     },
     {
-      id: 4,
+      id: 7,
       name: "Course Landing Page",
       image: "/assets/Landing Page.png",
       summary: "Responsive landing page for an educational platform with modern design principles.",
@@ -132,28 +198,79 @@ const Projects = () => {
                   {/* Hover Overlay */}
                   <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <div className="flex space-x-4">
-                      <Button
-                        component="a"
-                        href={project.vercelLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        variant="contained"
-                        color="primary"
-                        className="p-2 rounded-full"
-                      >
-                        <ExternalLink />
-                      </Button>
-                      <Button
-                        component="a"
-                        href={project.githubLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        variant="contained"
-                        color="secondary"
-                        className="p-2 rounded-full"
-                      >
-                        <Github />
-                      </Button>
+                      {project.type === "Full Stack" ? (
+                        <>
+                          <Button
+                            component="a"
+                            href={project.vercelLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            variant="contained"
+                            color="primary"
+                            className="p-2 rounded-full"
+                          >
+                            <ExternalLink />
+                          </Button>
+                          <Button
+                            component="a"
+                            href={project.renderLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            variant="contained"
+                            color="secondary"
+                            className="p-2 rounded-full"
+                          >
+                            Backend Demo
+                          </Button>
+                          <Button
+                            component="a"
+                            href={project.githubFrontendLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            variant="contained"
+                            color="success"
+                            className="p-2 rounded-full"
+                          >
+                            <Github />
+                          </Button>
+                          <Button
+                            component="a"
+                            href={project.githubBackendLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            variant="contained"
+                            color="info"
+                            className="p-2 rounded-full"
+                          >
+                            Backend Code
+                          </Button>
+                        </>
+                      ) : (
+                        <>
+                          <Button
+                            component="a"
+                            href={project.vercelLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            variant="contained"
+                            color="primary"
+                            className="p-2 rounded-full"
+                          >
+                            <ExternalLink />
+                          </Button>
+                          <Button
+                            component="a"
+                            href={project.githubLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            variant="contained"
+                            color="secondary"
+                            className="p-2 rounded-full"
+                          >
+                            <Github />
+                          </Button>
+                        </>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -198,28 +315,6 @@ const Projects = () => {
                         </span>
                       ))}
                     </div>
-                  </div>
-                  <div className="d-flex justify-content-between">
-                    <Button
-                      component="a"
-                      href={project.vercelLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      variant="contained"
-                      color="primary"
-                    >
-                      Live Demo
-                    </Button>
-                    <Button
-                      component="a"
-                      href={project.githubLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      variant="contained"
-                      color="secondary"
-                    >
-                      Source Code
-                    </Button>
                   </div>
                 </div>
               </Box>
