@@ -98,8 +98,9 @@ const Projects = () => {
   };
 
   return (
-    <section className="bg-gray-50 py-[30px] ml-[120px] px-[40px] mr-[-200px] z-10" style={{ backgroundColor: "#273746" }}>
+    <section className="bg-gray-50 py-[30px] ml-[20%] px-[40px]" style={{ backgroundColor: "#273746" }}>
       <Container>
+        {/* Heading */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -111,6 +112,7 @@ const Projects = () => {
           <div className="h-1 w-20 bg-indigo-600 rounded-full"></div>
         </motion.div>
 
+        {/* Projects Grid */}
         <motion.div
           variants={container}
           initial="hidden"
@@ -120,12 +122,14 @@ const Projects = () => {
           {projects.map((project) => (
             <motion.div key={project.id} variants={item} className="col">
               <Box className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 relative">
+                {/* Project Image */}
                 <div className="relative group">
                   <img
                     src={project.image}
                     alt={project.name}
                     className="w-full h-48 object-cover object-top transition-transform duration-300 group-hover:scale-110"
                   />
+                  {/* Hover Overlay */}
                   <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <div className="flex space-x-4">
                       <Button
@@ -154,6 +158,7 @@ const Projects = () => {
                   </div>
                 </div>
 
+                {/* Project Details */}
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-4">
                     <Typography variant="h5" component="h2" style={{ fontWeight: 'bold' }}>
@@ -172,9 +177,7 @@ const Projects = () => {
                       {project.type}
                     </Badge>
                   </div>
-
                   <p className="text-gray-600 mb-4">{project.summary}</p>
-
                   <div className="mb-4">
                     <Typography
                       variant="h6"
@@ -196,7 +199,6 @@ const Projects = () => {
                       ))}
                     </div>
                   </div>
-
                   <div className="d-flex justify-content-between">
                     <Button
                       component="a"
