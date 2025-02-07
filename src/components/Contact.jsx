@@ -3,13 +3,13 @@ import { motion } from 'framer-motion';
 import { Container, TextField, Button, Grid, Card, CardContent, Typography, IconButton, CircularProgress } from '@mui/material';
 import { Mail, Phone, GitHub, LinkedIn, Send } from '@mui/icons-material';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { sendContactForm } from '../api';
+import { sendContactForm } from '../api'; // Import the function to send form data
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState(null); // For handling error message
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -19,12 +19,14 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setError(null);
+    setError(null); // Clear previous errors if any
+
     try {
+      // Sending form data to the backend API
       await sendContactForm(formData);
-      setFormData({ name: '', email: '', message: '' });
+      setFormData({ name: '', email: '', message: '' }); // Reset form fields
       setSubmitted(true);
-      setTimeout(() => setSubmitted(false), 3000);
+      setTimeout(() => setSubmitted(false), 3000); // Hide success message after 3 seconds
     } catch (error) {
       setError("Failed to send the message. Please try again later.");
     } finally {
@@ -40,11 +42,12 @@ const Contact = () => {
   ];
 
   return (
-    <div className="ml-[20%] px-[40px] py-[30px]"> {/* Add ml-[20%] here */}
+    <div className="content-wrapper" style={{ marginLeft: '250px', padding: '30px' }}> {/* Adjust margin-left to avoid sidebar overlap */}
       <Container>
         <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-4">
           <Typography variant="h3" className="fw-bold text-primary">Get in Touch</Typography>
         </motion.div>
+
         <Grid container spacing={4}>
           {/* Contact Form */}
           <Grid item xs={12} md={6}>
@@ -94,12 +97,15 @@ const Contact = () => {
                       {isSubmitting ? <CircularProgress size={24} color="inherit" /> : <><Send /> Send Message</>}
                     </Button>
                   </form>
+
+                  {/* Display Success or Error Message */}
                   {submitted && <Typography variant="body2" color="success.main" className="mt-3">Your message has been sent!</Typography>}
                   {error && <Typography variant="body2" color="error.main" className="mt-3">{error}</Typography>}
                 </CardContent>
               </Card>
             </motion.div>
           </Grid>
+
           {/* Contact Info */}
           <Grid item xs={12} md={6}>
             <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }}>
