@@ -7,13 +7,12 @@
   --primary-color: #4682B4; /* Steel Blue */
   --secondary-color: #20B2AA; /* Light Sea Green */
   --accent-color: #E67E22; /* Carrot Orange */
-  --light-bg-color: #e77f7f; /* Soft Gray */
+  --light-bg-color: #1C2833; /* Dark Navy (Replaced pink with this) */
   --dark-bg-gradient-start: #273746; /* Deep Gray-Blue */
   --dark-bg-gradient-end: #1C2833; /* Dark Navy */
   --heading-color: #FFD700; /* Gold for headings */
   --text-color: #B0C4DE; /* Light Steel Blue for general text */
   --paper-text-color: #273215; /* Sea Green for card text */
-
   font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -41,12 +40,15 @@ body {
   margin-left: 20%; /* Match the sidebar width */
   padding: 0;
   font-family: 'Inter', sans-serif;
-  background-color: var(--light-bg-color);
+  background-color: var(--light-bg-color); /* Updated to match the dark navy color */
+  color: var(--text-color); /* Ensure text is readable */
 }
 
 /* Section Margin */
 section {
   margin-left: 20%; /* Match the sidebar width */
+  background-color: var(--light-bg-color); /* Consistent background color */
+  color: var(--text-color); /* Ensure text is readable */
 }
 
 /* Responsive Design */
@@ -58,7 +60,6 @@ section {
     justify-content: center;
     padding: 0.5rem;
   }
-
   body,
   section {
     margin-left: 0;

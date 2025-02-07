@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { User, Briefcase, Code, Mail } from "lucide-react";
-import { Button } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 
 const Navbar = () => {
   const handleResumeClick = () => {
@@ -9,26 +9,39 @@ const Navbar = () => {
   };
 
   return (
-    <nav>
+    <nav style={{ backgroundColor: "#1C2833" }} className="fixed top-0 left-0 w-[20%] h-screen bg-gradient-to-b from-[#273746] to-[#1C2833] text-white p-6 overflow-y-auto">
       {/* Profile Section */}
-      <div className="flex flex-col items-center mb-6">
+      <div className="flex flex-col items-center justify-center space-y-4 mb-8">
         {/* Profile Picture */}
-        <div className="relative group">
+        <div className="relative group transition-transform duration-300">
           <img
             src="/assets/Me5.jpg"
             alt="Neeraj Subramani"
-            className="w-16 h-16 rounded-full object-cover shadow-lg border-2 border-[#16A085] transition-transform duration-300 group-hover:scale-105"
+            className="w-16 h-16 rounded-full object-cover shadow-lg border-2 border-[#16A085] group-hover:scale-105"
           />
         </div>
         {/* Name and Tagline */}
-        <h2 className="mt-4 text-sm font-bold text-[#F39C12] tracking-wide">Neeraj Subramani</h2>
-        <h2 className="text-xs text-[#BDC3C7] text-center font-medium leading-relaxed">
-          {/* Transforming ideas into interactive websites */}
-        </h2>
+        <div className="text-center">
+          <h2 className="text-sm font-bold text-[#F39C12] tracking-wide">Neeraj Subramani</h2>
+          <Typography
+            variant="body2"
+            style={{
+              color: "#BDC3C7",
+              fontStyle: "italic",
+              fontWeight: "medium",
+              padding: "0.25rem 0.5rem",
+              backgroundColor: "rgba(255, 255, 255, 0.1)",
+              borderRadius: "4px",
+              marginTop: "0.5rem",
+            }}
+          >
+            {"“Transforming ideas into interactive websites”"}
+          </Typography>
+        </div>
       </div>
 
       {/* Navigation Links */}
-      <div className="flex flex-col items-start space-y-2">
+      <div style={{marginTop:"20px"}} className="space-y-4">
         {[
           { to: "/about", icon: <User />, label: "About" },
           { to: "/projects", icon: <Briefcase />, label: "Projects" },
@@ -53,8 +66,9 @@ const Navbar = () => {
       </div>
 
       {/* Resume Button */}
-      <div className="mt-[20px]">
+      <div className="mt-auto pt-8">
         <button
+        style={{marginTop:"-7 0px"}}
           onClick={handleResumeClick}
           className="flex items-center p-2 w-full justify-start rounded-lg text-sm font-semibold transition-all duration-300 bg-gradient-to-r from-[#5b79d9] to-[#1abc9c] text-white shadow-lg hover:bg-[#1ABC9C]/70"
         >

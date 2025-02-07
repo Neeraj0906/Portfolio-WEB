@@ -266,6 +266,7 @@ const Projects = () => {
                           variant="contained"
                           color="secondary"
                           className="p-2 rounded-full"
+                          style={{marginLeft:"61.4px"}}
                         >
                           Backend Demo
                         </Button>
@@ -288,6 +289,7 @@ const Projects = () => {
                           variant="contained"
                           color="info"
                           className="p-2 rounded-full"
+                          style={{marginLeft:"65.1px"}}
                         >
                           Backend Code
                         </Button>
@@ -314,6 +316,7 @@ const Projects = () => {
                           variant="contained"
                           color="secondary"
                           className="p-2 rounded-full"
+                          style={{marginLeft:"132px"}}
                         >
                           Source Code
                         </Button>
