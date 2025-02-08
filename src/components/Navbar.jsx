@@ -5,7 +5,7 @@ import { Button, Typography } from "@mui/material";
 
 const Navbar = () => {
   const handleResumeClick = () => {
-    window.open("/assets/resume.pdf", "_blank");
+    window.open("/assets/Neeraj-Resume.pdf", "_blank");
   };
 
   return (
