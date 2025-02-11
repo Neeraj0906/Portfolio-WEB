@@ -32,7 +32,7 @@ const About = () => {
             component="h1"
             sx={{
               fontWeight: 'bold',
-              background: 'linear-gradient(90deg, rgb(106, 195, 224), rgb(22, 15, 114))',
+              background: 'linear-gradient(90deg, rgb(229, 163, 218), rgb(32, 23, 209))',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               mb: 2,
