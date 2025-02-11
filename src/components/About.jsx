@@ -1,82 +1,318 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Container, Typography, Box, Paper, Grid } from '@mui/material';
+import {
+  Container,
+  Typography,
+  Box,
+  Paper,
+  Grid,
+  Button,
+  IconButton,
+} from '@mui/material';
+import { LinkedIn, GitHub, Email } from '@mui/icons-material';
 
 const About = () => {
   return (
     <motion.section
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      className="min-h-screen bg-gradient-custom py-16 px-[40px] ml-[20%]" // Add ml-[20%] to respect the sidebar
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+      className="min-h-screen bg-gradient-to-br from-[#f5f7fa] to-[#c3cfe2] py-16 px-[40px]"
     >
       <Container maxWidth="lg">
         {/* Heading */}
         <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="mb-10 text-center"
+          className="text-center mb-12"
         >
-          <Typography variant="h3" component="h1" style={{ color: 'var(--heading-color)' }} gutterBottom>
-            About <span style={{ color: 'var(--primary-color)' }}>Me</span>
+          <Typography
+            variant="h3"
+            component="h1"
+            sx={{
+              fontWeight: 'bold',
+              background: 'linear-gradient(90deg, rgb(106, 195, 224), rgb(22, 15, 114))',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              mb: 2,
+            }}
+          >
+            About <span style={{ color: '#673ab7' }}>Me</span>
           </Typography>
-          <Box className="h-1 w-24 bg-accent rounded-full mx-auto"></Box>
+          <Box className="h-1 w-24 bg-gradient-to-r from-[#ff7e5f] to-[#feb47b] rounded-full mx-auto"></Box>
         </motion.div>
 
-        <Grid container spacing={4}>
-          {/* Bio Section */}
-          <Grid item xs={12} md={6}>
-            <Paper elevation={5} className="p-6 bg-white rounded-lg shadow-lg paper">
-              <Typography variant="h5" component="h2" style={{ color: 'var(--primary-color)' }} gutterBottom>
-                Hello, I'm <span style={{ color: 'var(--accent-color)' }}>Neeraj Subramani</span>!
-              </Typography>
-              <Typography variant="body1" style={{ color: 'var(--paper-text-color)' }}>
-                I'm a passionate web developer with a strong background in full-stack development using the MERN stack.
-                I enjoy creating interactive and visually stunning websites that provide excellent user experiences.
-                My goal is to constantly learn and push my skills further, building innovative solutions.
-              </Typography>
+        {/* Main Content */}
+        <Grid container spacing={6}>
+          {/* Section 1: Introduction */}
+          <Grid item xs={12}>
+            <Paper
+              elevation={6}
+              className="p-8 rounded-lg shadow-lg"
+              sx={{
+                backgroundColor: '#fffaf0', // Creamy white background
+                position: 'relative',
+              }}
+            >
+              {/* Tag for Heading */}
+              <Box
+                sx={{
+                  position: 'absolute',
+                  top: '-1rem',
+                  left: '1rem',
+                  backgroundColor: '#ff7e5f',
+                  color: '#fff',
+                  px: 2,
+                  py: 0.5,
+                  borderRadius: '4px',
+                  fontSize: '0.8rem',
+                  fontWeight: 'bold',
+                }}
+              >
+                Introduction
+              </Box>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
+              >
+                <Typography
+                  variant="h2"
+                  component="h2"
+                  sx={{
+                    fontWeight: 'bold',
+                    color: '#ff7e5f', // Grand color for the name
+                    textAlign: 'center',
+                    mb: 4,
+                    ml: '-240px',
+                  }}
+                >
+                  Neeraj Subramani
+                </Typography>
+                <Typography
+                  variant="body1"
+                  sx={{ color: '#555', lineHeight: 1.6, textAlign: 'start' }}
+                >
+                  I'm a passionate web developer specializing in full-stack development using the MERN stack. I enjoy creating interactive and visually stunning websites that provide excellent user experiences. My goal is to constantly learn and push my skills further, building innovative solutions.
+                </Typography>
+              </motion.div>
             </Paper>
           </Grid>
 
-          {/* Education Section */}
-          <Grid item xs={12} md={6}>
-            <Paper elevation={5} className="p-6 bg-white rounded-lg shadow-lg paper">
-              <Typography variant="h5" component="h3" style={{ color: 'var(--primary-color)' }} gutterBottom>
+          {/* Section 2: Education */}
+          <Grid item xs={12}>
+            <Paper
+              elevation={6}
+              className="p-8 rounded-lg shadow-lg"
+              sx={{
+                backgroundColor: '#f0f8ff', // Light blue background
+                position: 'relative',
+              }}
+            >
+              {/* Tag for Heading */}
+              <Box
+                sx={{
+                  position: 'absolute',
+                  top: '-1rem',
+                  left: '1rem',
+                  backgroundColor: '#673ab7',
+                  color: '#fff',
+                  px: 2,
+                  py: 0.5,
+                  borderRadius: '4px',
+                  fontSize: '0.8rem',
+                  fontWeight: 'bold',
+                }}
+              >
                 Education
-              </Typography>
-              <Typography variant="body1" style={{ color: 'var(--paper-text-color)' }}>
-                I earned a <strong>Bachelor’s degree in Computer Science</strong> from <strong>Dayananda Sagar University</strong> (2020 - 2024).  
-                During my studies, I developed a strong foundation in web development and full-stack technologies through hands-on projects.
-              </Typography>
+              </Box>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 }}
+              >
+                <Typography
+                  variant="h4"
+                  component="h3"
+                  sx={{
+                    fontWeight: 'bold',
+                    color: '#673ab7', // Distinct color for Education heading
+                    mb: 2,
+                  }}
+                >
+                  Education
+                </Typography>
+                <Typography
+                  variant="body1"
+                  sx={{ color: '#555', lineHeight: 1.6 }}
+                >
+                  I earned a{' '}
+                  <strong>Bachelor’s degree in Computer Science</strong> from{' '}
+                  <strong>Dayananda Sagar University</strong> (2020 - 2024).
+                  During my studies, I developed a strong foundation in web development and full-stack technologies through hands-on projects.
+                </Typography>
+              </motion.div>
             </Paper>
           </Grid>
 
-          {/* What I Do Section */}
+          {/* Section 3: What I Do */}
           <Grid item xs={12}>
-            <Paper elevation={5} className="p-6 bg-white rounded-lg shadow-lg paper">
-              <Typography variant="h5" component="h3" style={{ color: 'var(--primary-color)' }} gutterBottom>
-                What I Do
-              </Typography>
-              <Typography variant="body1" style={{ color: 'var(--paper-text-color)' }}>
-                I specialize in building responsive and dynamic web applications using the latest technologies such as React, Node.js, and MongoDB.
-                I love working on projects that solve real-world problems and help businesses grow.
-              </Typography>
+            <Paper
+              elevation={6}
+              className="p-8 rounded-lg shadow-lg"
+              sx={{
+                backgroundColor: '#fff3e0', // Light orange background
+                position: 'relative',
+              }}
+            >
+              {/* Tag for Heading */}
+              <Box
+                sx={{
+                  position: 'absolute',
+                  top: '-1rem',
+                  left: '1rem',
+                  backgroundColor: '#0077b5',
+                  color: '#fff',
+                  px: 2,
+                  py: 0.5,
+                  borderRadius: '4px',
+                  fontSize: '0.8rem',
+                  fontWeight: 'bold',
+                }}
+              >
+                Skills
+              </Box>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.7 }}
+              >
+                <Typography
+                  variant="h4"
+                  component="h3"
+                  sx={{
+                    fontWeight: 'bold',
+                    color: '#0077b5', // Distinct color for What I Do heading
+                    mb: 2,
+                  }}
+                >
+                  What I Do
+                </Typography>
+                <Typography
+                  variant="body1"
+                  sx={{ color: '#555', lineHeight: 1.6 }}
+                >
+                  I specialize in building responsive and dynamic web applications using the latest technologies such as React, Node.js, and MongoDB. I love working on projects that solve real-world problems and help businesses grow.
+                </Typography>
+              </motion.div>
             </Paper>
           </Grid>
 
-          {/* Floating Box with Animation */}
+          {/* Section 4: Let's Connect */}
           <Grid item xs={12}>
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.1 }}>
-              <Paper elevation={5} className="p-6 bg-accent text-black rounded-lg shadow-lg text-center">
-                <Typography variant="h5" component="h2" mb={2} style={{ color: 'var(--heading-color)' }}>
+            <Paper
+              elevation={6}
+              className="p-8 rounded-lg shadow-lg"
+              sx={{
+                backgroundImage: 'linear-gradient(to bottom right, #673ab7, #512da8)', // Gradient background
+                color: '#fff',
+                position: 'relative',
+              }}
+            >
+              {/* Tag for Heading */}
+              <Box
+                sx={{
+                  position: 'absolute',
+                  top: '-1rem',
+                  left: '1rem',
+                  backgroundColor: '#ffffff',
+                  color: '#673ab7',
+                  px: 2,
+                  py: 0.5,
+                  borderRadius: '4px',
+                  fontSize: '0.8rem',
+                  fontWeight: 'bold',
+                }}
+              >
+                Contact
+              </Box>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8 }}
+              >
+                <Typography
+                  variant="h4"
+                  component="h3"
+                  sx={{
+                    fontWeight: 'bold',
+                    color: '#ffffff', // White text for contrast
+                    mb: 2,
+                  }}
+                >
                   Let's Connect!
                 </Typography>
-                <Typography variant="body1" style={{ color: 'var(--paper-text-color)' }}>
+                <Typography variant="body1" sx={{ lineHeight: 1.6, mb: 4 }}>
                   Whether you're looking for collaboration or just want to chat about tech, feel free to reach out!
                 </Typography>
-              </Paper>
-            </motion.div>
+                {/* Social Links */}
+                <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center', mb: 4 }}>
+                  <IconButton
+                    href="https://www.linkedin.com/in/neeraj-subramani"
+                    target="_blank"
+                    aria-label="LinkedIn"
+                    sx={{
+                      backgroundColor: '#fff',
+                      color: '#0077b5',
+                      '&:hover': { backgroundColor: '#e0e0e0' },
+                    }}
+                  >
+                    <LinkedIn />
+                  </IconButton>
+                  <IconButton
+                    href="https://github.com/Neeraj0906"
+                    target="_blank"
+                    aria-label="GitHub"
+                    sx={{
+                      backgroundColor: '#fff',
+                      color: '#24292e',
+                      '&:hover': { backgroundColor: '#e0e0e0' },
+                    }}
+                  >
+                    <GitHub />
+                  </IconButton>
+                  <IconButton
+                    href="mailto:neeraj.subramani@example.com"
+                    aria-label="Email"
+                    sx={{
+                      backgroundColor: '#fff',
+                      color: '#ff9800',
+                      '&:hover': { backgroundColor: '#e0e0e0' },
+                    }}
+                  >
+                    <Email />
+                  </IconButton>
+                </Box>
+                {/* Call to Action Button */}
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  href="#contact"
+                  sx={{
+                    backgroundColor: '#ffffff',
+                    color: '#673ab7',
+                    '&:hover': { backgroundColor: '#e0e0e0' },
+                    fontWeight: 'bold',
+                    display: 'block',
+                    margin: '0 auto',
+                    paddingLeft:"360px"
+                  }}
+                >
+                  Contact Me
+                </Button>
+              </motion.div>
+            </Paper>
           </Grid>
         </Grid>
       </Container>

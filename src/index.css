@@ -47,8 +47,14 @@ body {
 /* Section Margin */
 section {
   margin-left: 20%; /* Match the sidebar width */
-  background-color: var(--light-bg-color); /* Consistent background color */
-  color: var(--text-color); /* Ensure text is readable */
+  background-color: #f5f7fa; /* Light gradient start color */
+  color: #333; /* Dark text color for readability */
+  padding: 40px; /* Add padding for spacing */
+  min-height: 100vh; /* Ensure the section takes up the full viewport height */
+}
+/* Optional: Add a subtle gradient for the section */
+section {
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2); /* Subtle gradient */
 }
 
 /* Responsive Design */
