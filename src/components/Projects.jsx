@@ -25,6 +25,16 @@ const Projects = () => {
         "A full-stack flight booking website with search engine, payment integration, and booking management.",
       details:
         "The Flights.com project is a comprehensive web application that allows users to search for flights using the Amadeus API, book flights, view booking details, and make payments using the Stripe API.",
+      techStack: [
+        "React.js",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Stripe API",
+        "Amadeus API",
+        "Tailwind CSS",
+        "JWT Auth",
+      ],
       vercelLink: "https://flight-frontend-zeta.vercel.app/",
       renderLink: "https://flight-backend-twe1.onrender.com/",
       githubFrontendLink: "https://github.com/Neeraj0906/FLIGHT-frontend",
@@ -39,6 +49,15 @@ const Projects = () => {
         "A visually appealing habit tracker app that helps users set goals and track progress.",
       details:
         "This app allows users to create habits, track their daily progress, and earn points for consistency. The interface is designed to be engaging and motivating.",
+      techStack: [
+        "MongoDB",
+        "React",
+        "Node.js",
+        "Express",
+        "Tailwind CSS",
+        "Framer Motion",
+        "Material UI",
+      ],
       vercelLink: "https://habit-tracker-frontend-opal.vercel.app/",
       renderLink: "https://habit-tracker-backend-b8nl.onrender.com/",
       githubFrontendLink: "https://github.com/Neeraj0906/Habit-Tracker-frontend",
@@ -53,6 +72,16 @@ const Projects = () => {
         "An AI-powered recipe generator that suggests recipes based on ingredients provided.",
       details:
         "This project uses the TogetherAI API to generate recipes dynamically. Users can input ingredients, and the app provides step-by-step instructions for preparing a dish.",
+      techStack: [
+        "MongoDB",
+        "React",
+        "Node.js",
+        "Express",
+        "TogetherAI API",
+        "Tailwind CSS",
+        "Framer Motion",
+        "Material UI",
+      ],
       vercelLink: "https://ai-recipe-generator-delta.vercel.app/",
       renderLink: "https://recipe-backend-fsd.onrender.com/",
       githubFrontendLink: "https://github.com/Neeraj0906/Ai-Recipe-Generator",
@@ -67,6 +96,15 @@ const Projects = () => {
         "User can search for movies, view details, and watch its ratings.",
       details:
         "This movie-search website is built using modern technologies like React, Node.js, and Tailwind CSS. It includes animations, Material UI components, and a responsive design.",
+      techStack: [
+        "MongoDB",
+        "React",
+        "Node.js",
+        "Express",
+        "Tailwind CSS",
+        "Framer Motion",
+        "Material UI",
+      ],
       vercelLink: "https://movie-search-app-react-ten.vercel.app/search",
       renderLink: "https://movie-search-backend-okgv.onrender.com/",
       githubFrontendLink: "https://github.com/Neeraj0906/Movie-Search-App-React",
@@ -82,6 +120,15 @@ const Projects = () => {
         "Feature-rich e-commerce platform with product management, cart functionality, and checkout process.",
       details:
         "A React-based e-commerce site that fetches product data from a public API. Features include product browsing, cart management, and checkout flow.",
+      techStack: [
+        "React.js",
+        "Redux",
+        "Tailwind CSS",
+        "RESTful API",
+        "Context API",
+        "React Router",
+        "Local Storage",
+      ],
       vercelLink: "https://my-react-cart-app-fxnc.vercel.app/",
       githubLink: "https://github.com/Neeraj0906/React-Assignment-Done",
       type: "Frontend",
@@ -94,6 +141,14 @@ const Projects = () => {
         "Interactive memory matching game with score tracking and animations.",
       details:
         "A browser-based memory game where users match pairs of identical emojis on a grid. Features include card flipping animations and attempt tracking.",
+      techStack: [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "Local Storage",
+        "CSS Animations",
+        "DOM Manipulation",
+      ],
       vercelLink: "https://assignment3-card-game.vercel.app/",
       githubLink: "https://github.com/Neeraj0906/Assignment3-Card-Game",
       type: "Frontend",
@@ -106,6 +161,13 @@ const Projects = () => {
         "Responsive landing page for an educational platform with modern design principles.",
       details:
         "A marketing page for an online course platform featuring course details, testimonials, and call-to-action sections.",
+      techStack: [
+        "HTML5",
+        "Tailwind CSS",
+        "Responsive Design",
+        "CSS Grid",
+        "CSS Flexbox",
+      ],
       vercelLink: "https://assignment-2-green-sigma.vercel.app/",
       githubLink: "https://github.com/Neeraj0906/Assignment-2",
       type: "Frontend",
@@ -128,12 +190,12 @@ const Projects = () => {
   };
 
   return (
-    
     <Box
       sx={{
         backgroundColor: "linear-gradient(135deg, #f5f7fa, #c3cfe2)", // Gradient background
         py: 8,
         px: 4,
+        ml: "20%", // Add margin to account for the fixed navbar
       }}
     >
       {/* Heading */}
@@ -169,7 +231,6 @@ const Projects = () => {
           display: "grid",
           gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
           gap: "2rem",
-          marginLeft:"300px"
         }}
       >
         {projects.map((project) => (
@@ -200,14 +261,14 @@ const Projects = () => {
                 }}
               />
 
-              {/* Full Stack Label (Top-Right Corner) */}
-              {project.type === "Full Stack" && (
+              {/* Full Stack or Frontend Label (Top-Right Corner) */}
+              {project.type === "Full Stack" || project.type === "Frontend" ? (
                 <Box
                   sx={{
                     position: "absolute",
                     top: 10,
                     right: 10,
-                    backgroundColor: "#673ab7",
+                    backgroundColor: project.type === "Full Stack" ? "#673ab7" : "#ff9800",
                     color: "#fff",
                     px: 2,
                     py: 0.5,
@@ -216,9 +277,9 @@ const Projects = () => {
                     fontWeight: "bold",
                   }}
                 >
-                  Full Stack
+                  {project.type}
                 </Box>
-              )}
+              ) : null}
 
               {/* Project Name */}
               <CardContent sx={{ textAlign: "center", py: 2 }}>
@@ -285,8 +346,38 @@ const Projects = () => {
                     {project.summary}
                   </Typography>
 
+                  {/* Tech Stack */}
+                  <Box sx={{ mt: 2 }}>
+                    <Typography
+                      variant="subtitle2"
+                      sx={{
+                        fontWeight: "bold",
+                        color: "#673ab7",
+                        mb: 1,
+                      }}
+                    >
+                      Tech Stack
+                    </Typography>
+                    <Box sx={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
+                      {project.techStack.map((tech, index) => (
+                        <Box
+                          key={index}
+                          sx={{
+                            backgroundColor: "#f0f4f8",
+                            color: "#555",
+                            padding: "0.25rem 0.5rem",
+                            borderRadius: "4px",
+                            fontSize: "0.8rem",
+                          }}
+                        >
+                          {tech}
+                        </Box>
+                      ))}
+                    </Box>
+                  </Box>
+
                   {/* Buttons Section */}
-                  <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+                  <Box sx={{ display: "flex", flexDirection: "column", gap: 1, mt: 2 }}>
                     {/* First Line: Frontend Demo and Backend Demo */}
                     <Box sx={{ display: "flex", justifyContent: "space-between", gap: 1 }}>
                       {/* Left Side: Frontend Demo */}
