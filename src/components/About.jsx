@@ -86,13 +86,15 @@ const About = () => {
                     textAlign: 'center',
                     mb: 4,
                     ml: '-240px',
+                    padding:"1px 10px",
+                    paddingLeft:"60px"
                   }}
                 >
                   Neeraj Subramani
                 </Typography>
                 <Typography
                   variant="body1"
-                  sx={{ color: '#555', lineHeight: 1.6, textAlign: 'start' }}
+                  sx={{ color: '#555', lineHeight: 1.6, textAlign: 'start' ,paddingLeft:"25px"}}
                 >
                   I'm a passionate web developer specializing in full-stack development using the MERN stack. I enjoy creating interactive and visually stunning websites that provide excellent user experiences. My goal is to constantly learn and push my skills further, building innovative solutions.
                 </Typography>
@@ -108,6 +110,8 @@ const About = () => {
               sx={{
                 backgroundColor: '#f0f8ff', // Light blue background
                 position: 'relative',
+                padding:"10px 20px",
+                    paddingLeft:"20px"
               }}
             >
               {/* Tag for Heading */}
@@ -139,6 +143,7 @@ const About = () => {
                     fontWeight: 'bold',
                     color: '#673ab7', // Distinct color for Education heading
                     mb: 2,
+                    
                   }}
                 >
                   Education
@@ -195,13 +200,16 @@ const About = () => {
                     fontWeight: 'bold',
                     color: '#0077b5', // Distinct color for What I Do heading
                     mb: 2,
+                    padding:"10px 20px",
+                    paddingLeft:"20px"
                   }}
                 >
                   What I Do
                 </Typography>
                 <Typography
                   variant="body1"
-                  sx={{ color: '#555', lineHeight: 1.6 }}
+                  sx={{ color: '#555', lineHeight: 1.6 ,padding:"10px 20px",
+                    paddingLeft:"20px"}}
                 >
                   I specialize in building responsive and dynamic web applications using the latest technologies such as React, Node.js, and MongoDB. I love working on projects that solve real-world problems and help businesses grow.
                 </Typography>
@@ -248,12 +256,14 @@ const About = () => {
                   sx={{
                     fontWeight: 'bold',
                     color: '#ffffff', // White text for contrast
-                    mb: 2,
+                    mb: 2,padding:"10px 20px",
+                    paddingLeft:"20px"
                   }}
                 >
                   Let's Connect!
                 </Typography>
-                <Typography variant="body1" sx={{ lineHeight: 1.6, mb: 4 }}>
+                <Typography variant="body1" sx={{ lineHeight: 1.6, mb: 4 ,padding:"10px 20px",
+                    paddingLeft:"20px"}}>
                   Whether you're looking for collaboration or just want to chat about tech, feel free to reach out!
                 </Typography>
                 {/* Social Links */}
