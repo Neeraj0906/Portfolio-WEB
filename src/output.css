@@ -334,9 +334,11 @@ nav {
   z-index: 1000;
 }
 body {
-  margin-left: 16rem;
+  margin-left: 16rem; /* Adjusted for the fixed navbar */
   padding: 0;
   font-family: 'Inter', sans-serif;
+
+  /* Solid Neutral Background */
   background-color: #f5f7fa;
 }
 section.ml-64 {
