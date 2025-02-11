@@ -128,6 +128,7 @@ const Projects = () => {
   };
 
   return (
+    
     <Box
       sx={{
         backgroundColor: "linear-gradient(135deg, #f5f7fa, #c3cfe2)", // Gradient background
@@ -168,6 +169,7 @@ const Projects = () => {
           display: "grid",
           gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
           gap: "2rem",
+          marginLeft:"300px"
         }}
       >
         {projects.map((project) => (
