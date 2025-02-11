@@ -40,7 +40,7 @@ body {
   margin-left: 20%; /* Match the sidebar width */
   padding: 0;
   font-family: 'Inter', sans-serif;
-  background-color: var(--light-bg-color); /* Updated to match the dark navy color */
+  background-color: #c3cfe2; /* Updated to match the dark navy color */
   color: var(--text-color); /* Ensure text is readable */
 }
 

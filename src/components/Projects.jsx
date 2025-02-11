@@ -192,7 +192,7 @@ const Projects = () => {
   return (
     <Box
       sx={{
-        backgroundColor: "linear-gradient(135deg, #f5f7fa, #c3cfe2)", // Gradient background
+        backgroundColor: "linear-gradient(135deg, #f5f7fa,rgb(84, 113, 159))", // Gradient background
         py: 8,
         px: 4,
         ml: "20%", // Add margin to account for the fixed navbar
@@ -211,7 +211,7 @@ const Projects = () => {
           gutterBottom
           sx={{
             fontWeight: "bold",
-            background: "linear-gradient(90deg, #ff7e5f, #feb47b)",
+            background: "linear-gradient(90deg,rgb(31, 34, 109),rgb(178, 47, 163))",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
             mb: 4,
@@ -219,6 +219,7 @@ const Projects = () => {
         >
           Featured Projects
         </Typography>
+        
       </motion.div>
 
       {/* Projects Grid */}

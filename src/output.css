@@ -337,7 +337,7 @@ body {
   margin-left: 16rem;
   padding: 0;
   font-family: 'Inter', sans-serif;
-  background-color: var(--light-bg-color);
+  background-color: #f5f7fa;
 }
 section.ml-64 {
   margin-left: 16rem;
