@@ -85,7 +85,7 @@ const About = () => {
                     color: '#ff7e5f', // Grand color for the name
                     textAlign: 'center',
                     mb: 4,
-                    ml: '-400px',
+                    ml: '-500px',
                     padding:"1px 10px",
                     paddingLeft:"60px"
                   }}
