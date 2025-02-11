@@ -316,7 +316,7 @@ const About = () => {
                     fontWeight: 'bold',
                     display: 'block',
                     margin: '0 auto',
-                    paddingLeft:"470px"
+                    paddingLeft:"485px"
                   }}
                 >
                   Contact Me
